@@ -1,0 +1,37 @@
+packages/config-typescript/package.json
+  s_8b80a0239dc3c7::t_d3ea7dec7f48b0 1-6
+  s_8b80a0239dc3c7::t_c5f10c0663bace 7-10
+packages/config-typescript/tsconfig.node.json
+  s_8b80a0239dc3c7::t_742a220ceb1a18 1-7
+packages/config-typescript/tsconfig.base.json
+  s_8b80a0239dc3c7::t_a4ffa22037dd9f 1-18
+packages/config-typescript/tsconfig.web.json
+  s_8b80a0239dc3c7::t_f9b0febefaf654 1-8
+bunfig.toml
+  s_8b80a0239dc3c7::t_58f50ca30c0263 5-7
+bun.lock
+  s_8b80a0239dc3c7::t_d0076f6741dd63 16,21-24,169-170
+package.json
+  s_8b80a0239dc3c7::t_0bfd816bd9a88c 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "677d99d07f65389adab106946dc79175b59c4a18",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
