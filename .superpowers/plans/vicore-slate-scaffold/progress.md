@@ -60,7 +60,50 @@ For the design decisions this plan implements, see `spec.md` in this folder.
   optional `sdd/` subfolder), `tasks/<slug>.md`, `reviews/<slug>/`, and a
   small general-purpose `docs/` — and updated `phase.01.md`'s Task 1
   (the `000-superpowers-plugin-paths.mdc` rule content) accordingly.
-- Next: write `phase.04.md` (Release Packaging + remaining scripts + full
-  verification), completing the plan set. No execution has started yet —
-  still in Cursor Plan Mode; nothing outside `.superpowers/` has been
-  created or modified.
+- Wrote `phase.04.md` (Release Packaging, Remaining Scripts & Full
+  Verification) — extracts a shared `generate-from-template.ts` helper and
+  refactors Phase 3's `new-app.ts` onto it, then builds `new-package.ts`,
+  `new-crate.ts`, `dev.ts`, `changelog.ts`, and `package.ts`
+  (`assembleInstallDir`, TDD against a fake monorepo tree in a temp dir),
+  wires a root `moon run :package` task (re-adding a root `moon.yml` — this
+  time real/valid, registering `.` as a moon project, unlike the stray file
+  Phase 1 deleted), and ends with a full-repository verification pass
+  (one real `tauri build` + one real `scripts/package.ts` run producing an
+  actual `installDir/`).
+- All 4 phase plans are now written and self-reviewed (spec coverage,
+  placeholder scan, type/signature consistency across phases — see the
+  self-review note below). No execution has started yet — still in Cursor
+  Plan Mode; nothing outside `.superpowers/` has been created or modified.
+
+## Self-review (writing-plans skill, run after phase.04.md)
+
+- **Spec coverage:** every bullet in `spec.md`'s "Confirmed architecture
+  decisions" maps to at least one task: modular `modules/` nesting (phase.03
+  template), Isolation Pattern (phase.03 Task 1), granular capabilities
+  (phase.03 Tasks 1 & 4), no `CLAUDE.md` (phase.01 Task 14), Changesets across
+  apps/packages/crates (phase.01 Tasks 15/25, phase.02 Task 3, phase.04 Task
+  10), `.tool-versions` source of truth (phase.01 Tasks 17/19/26), Nord theme
+  - Tailwind v4 (phase.02 Tasks 5–6), release packaging layout (phase.04 Task
+    6). No gaps found.
+- **Placeholder scan:** no "TBD"/"implement later"/"add appropriate X" found
+  in any of the 4 phase files — every step that touches code shows the full
+  code; every step that names a version number either gives a concrete value
+  or an explicit "run this command to resolve the current latest" step.
+- **Type/signature consistency across phases:** verified the following
+  cross-phase interfaces match at both definition and call sites —
+  `syncCrateVersion(crateDir: string): void` (phase.01 Task 15 -> used by
+  phase.02 Task 3 Step 7, phase.04 Task 8 Step 10 conceptually via `bun run
+version`); `createSlateViteConfig(options?): UserConfig` (phase.01/02 Task
+  2 -> consumed identically in phase.02 Task 4 Step 3 and phase.03's app
+  template `vite.config.ts`); `cn(...inputs: ClassValue[]): string` (phase.02
+  Task 7 -> imported the same way from every primitive/composite in phase.02
+  Tasks 8–13, and from the generated app template's own components in
+  phase.03); `generateFromTemplate(templateDir, targetDir, replacements):
+void` (introduced in phase.04 Task 1 by refactoring phase.03's inline
+  `new-app.ts` logic — confirmed the refactor preserves `generateApp`'s
+  existing public signature so phase.03's own tests keep passing unmodified);
+  `AppManifestEntry`/`APPS` (phase.04 Task 6, single definition, no
+  duplicate list of the 9 app names elsewhere in code — the only other
+  enumeration of app names is in phase.03 Task 3's shell loop and phase.01's
+  Cargo/tsconfig glob patterns, which are intentionally name-based, not
+  imports of this type).
