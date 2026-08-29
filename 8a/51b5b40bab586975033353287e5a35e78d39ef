@@ -1,0 +1,30 @@
+packages/ui-kit/src/composites/app-shell/index.ts
+  s_8b80a0239dc3c7::t_bf11adfc2ad950 1
+packages/ui-kit/tests/unit/composites/app-shell.test.tsx
+  s_8b80a0239dc3c7::t_a3d7406ee643e0 1-17
+packages/ui-kit/src/composites/app-shell/app-shell.tsx
+  s_8b80a0239dc3c7::t_cc946bce62320e 1-19
+packages/ui-kit/src/index.ts
+  s_8b80a0239dc3c7::t_1b565a825d40e1 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "8a51b5b40bab586975033353287e5a35e78d39ef",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
