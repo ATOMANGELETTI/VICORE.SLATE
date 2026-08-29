@@ -1,0 +1,31 @@
+packages/ui-kit/tests/unit/composites/toolbar.test.tsx
+  s_8b80a0239dc3c7::t_017bc6f072d1fa 1-19
+packages/ui-kit/src/index.ts
+  s_8b80a0239dc3c7::t_12fb4a571dfd10 2
+packages/ui-kit/src/composites/toolbar/toolbar.tsx
+  s_8b80a0239dc3c7::t_3004250e67b6c4 1-13
+  s_8b80a0239dc3c7::t_0bb46eba0d3e18 14-15
+packages/ui-kit/src/composites/toolbar/index.ts
+  s_8b80a0239dc3c7::t_7c5dd98bda4e23 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "a70ffceaa89f1ca483ba30a08e219d95084c80a2",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
