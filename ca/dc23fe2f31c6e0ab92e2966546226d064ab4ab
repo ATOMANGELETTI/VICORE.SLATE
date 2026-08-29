@@ -1,0 +1,48 @@
+packages/ui-kit/moon.yml
+  s_8b80a0239dc3c7::t_67f7e1d927711f 1-5
+packages/ui-kit/src/index.ts
+  s_8b80a0239dc3c7::t_8b29143af76d23 1
+.moon/workspace.yml
+  s_8b80a0239dc3c7::t_6f137b67d1c677 5
+packages/ui-kit/vitest.config.ts
+  s_8b80a0239dc3c7::t_d95da1ecaa5985 1-4,6-7,9-14
+  s_8b80a0239dc3c7::t_b5124b180bad8a 5,8
+packages/ui-kit/tsconfig.json
+  s_8b80a0239dc3c7::t_1d0e31c19fb32d 1-11
+packages/ui-kit/tests/setup.ts
+  s_8b80a0239dc3c7::t_421549bcd0b1d3 1
+packages/ui-kit/vite.config.ts
+  s_8b80a0239dc3c7::t_95f7c95e7e3195 1-20
+  s_8b80a0239dc3c7::t_b22ce0a2b2dafe 21
+packages/ui-kit/package.json
+  s_8b80a0239dc3c7::t_17c07dc9144818 1-16
+  s_8b80a0239dc3c7::t_9075e5ac29ae48 17-19
+  s_8b80a0239dc3c7::t_b302e1b64edea9 20-43
+packages/ui-kit/playwright.config.ts
+  s_8b80a0239dc3c7::t_60fee142f75b9d 1-7
+tsconfig.json
+  s_8b80a0239dc3c7::t_4d647399427812 3
+bun.lock
+  s_8b80a0239dc3c7::t_a24c82c8be1c30 37-71,74-79,84-85,104-105,178-205,208-209,218-219,222-287,320-321,330-331,334-373,382-385,442-449,452,454,460-463,466-467,476-477,480-485,498-511,514-517,520-523,538-539,558-559,562-565,574-575,582-583,592-593,600-601,630-637,640-647,658-661,668-673,676-695,702-705,724-733,742-751,754-757,760-767,770-771,774-785,790-793,802-823,826-827,830-837,839-862
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "cadc23fe2f31c6e0ab92e2966546226d064ab4ab",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
