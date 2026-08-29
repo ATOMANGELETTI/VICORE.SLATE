@@ -1,0 +1,19 @@
+Cargo.toml
+  s_aab0917834f4b0::t_00bbaee76b3251 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "452764c859a98c18a3484cff38ab06a3d73e96b8",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
