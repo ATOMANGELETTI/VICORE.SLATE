@@ -2,3 +2,6 @@
 
 .angeletti/
 .angeletti/notepads/
+
+# Isolated git worktrees (superpowers:using-git-worktrees)
+.worktrees/
