@@ -1,0 +1,32 @@
+packages/ui-kit/src/composites/titlebar/titlebar.tsx
+  s_8b80a0239dc3c7::t_edafc519a4e14e 1-24
+packages/ui-kit/src/composites/titlebar/index.ts
+  s_8b80a0239dc3c7::t_8f6e1eb5cbda42 1-2
+packages/ui-kit/src/composites/titlebar/window-controls.tsx
+  s_8b80a0239dc3c7::t_df7b7519ea416e 1-25
+packages/ui-kit/tests/unit/composites/titlebar.test.tsx
+  s_8b80a0239dc3c7::t_01f741d51929a2 1-36
+packages/ui-kit/src/index.ts
+  s_8b80a0239dc3c7::t_3f126fe2486ea8 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "a55e09931d34b3c578282d060cded58eecf5c6ae",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
