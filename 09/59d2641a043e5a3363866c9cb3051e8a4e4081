@@ -1,0 +1,123 @@
+tsconfig.json
+  s_0ce40db76ff7ec::t_32650515ac9a3a 13-14
+apps/slate-launcher/src/modules/tray-menu/tray-menu.ts
+  s_0ce40db76ff7ec::t_e4e7c214192f80 1-7
+apps/slate-launcher/src/modules/tray-menu/index.ts
+  s_0ce40db76ff7ec::t_f499b40768c660 1
+apps/slate-launcher/src-tauri/src/modules/tray/mod.rs
+  s_0ce40db76ff7ec::t_ecf8a9327c3c56 1-32
+apps/slate-launcher/src-tauri/src/modules/mod.rs
+  s_0ce40db76ff7ec::t_18bb32830cef2d 1
+.moon/workspace.yml
+  s_0ce40db76ff7ec::t_b3d13c11e88128 14
+apps/slate-launcher/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_47b3c2399aba80 1-9
+  s_0ce40db76ff7ec::t_20bd84c7043f6b 10-12
+apps/slate-launcher/src-tauri/tests/tray.rs
+  s_0ce40db76ff7ec::t_ad660141cf8682 1-8
+apps/slate-launcher/src-tauri/Cargo.toml
+  s_aab0917834f4b0::t_58150ed9684d39 1-3,6-8
+  s_0ce40db76ff7ec::t_b280fd145523df 15
+  s_0ce40db76ff7ec::t_83dced3a952bde 4-5,9-14,16-18
+apps/slate-launcher/src-tauri/capabilities/tray-menu.json
+  s_0ce40db76ff7ec::t_3c8cc89ff333c7 1-7
+apps/slate-launcher/tests/unit/modules/tray-menu/tray-menu.test.ts
+  s_0ce40db76ff7ec::t_e74b0079a06cea 1-15
+Cargo.lock
+  s_0ce40db76ff7ec::t_f042a5fa48fb7c 2995-3005
+apps/slate-launcher/.gitignore
+  s_0ce40db76ff7ec::t_5a95e40523a530 1-2
+apps/slate-launcher/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_d882e0d77adee5 1-11
+apps/slate-launcher/index.html
+  s_0ce40db76ff7ec::t_d595ddc3b644e9 1-11
+apps/slate-launcher/isolation/index.html
+  s_0ce40db76ff7ec::t_9a040e662055c2 1-9
+apps/slate-launcher/isolation/index.ts
+  s_0ce40db76ff7ec::t_fb9926c8dce90a 1-13
+apps/slate-launcher/package.json
+  s_0ce40db76ff7ec::t_c43c281c324544 1-35
+apps/slate-launcher/playwright.config.ts
+  s_0ce40db76ff7ec::t_d98b7b37a28d60 1-6
+apps/slate-launcher/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_9a3f752faa90aa 1-2
+apps/slate-launcher/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_5c3c7493193fcc 1-3
+apps/slate-launcher/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_f360cba985dd07 1-7
+apps/slate-launcher/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_52c26755ea5e36 1-7
+apps/slate-launcher/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_0396e3da5adfec 1-8
+apps/slate-launcher/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_590d5d02a9e16c 1-5
+apps/slate-launcher/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_0efec9c89b7dd0 1-29
+apps/slate-launcher/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_c2d40cf4749fcf 1-3
+apps/slate-launcher/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_f88dd25ac2d68e 1-3
+apps/slate-launcher/src/main.tsx
+  s_0ce40db76ff7ec::t_11dacfd8a097c2 1-13
+apps/slate-launcher/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_869bc5f29c381d 1-3
+apps/slate-launcher/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_5244239b7afa56 1
+apps/slate-launcher/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_4110f4180cf0f3 1-21
+apps/slate-launcher/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_82959ebf699bff 1
+apps/slate-launcher/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_e422bf858c252b 1-6
+apps/slate-launcher/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_12a98d4547ae9b 1
+apps/slate-launcher/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_ef35041073fbe7 1-17
+apps/slate-launcher/src/styles/main.css
+  s_0ce40db76ff7ec::t_aed2e6c54697da 1-8
+apps/slate-launcher/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_1f2d046db94fab 1-6
+apps/slate-launcher/tests/setup.ts
+  s_0ce40db76ff7ec::t_f7815e1e6d134d 1-8
+apps/slate-launcher/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_0cb6ea4ac2bf9d 1-15
+apps/slate-launcher/tsconfig.json
+  s_0ce40db76ff7ec::t_8722fb0720b57d 1-6
+apps/slate-launcher/vite.config.ts
+  s_0ce40db76ff7ec::t_6ff0ac1ea6d20a 1-13
+apps/slate-launcher/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_a11e48f443a51f 1-6
+apps/slate-launcher/vitest.config.ts
+  s_0ce40db76ff7ec::t_f481042a593434 1-13
+bun.lock
+  s_0ce40db76ff7ec::t_0f769974f92e60 177-202,1052-1053
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "0959d2641a043e5a3363866c9cb3051e8a4e4081",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0ce40db76ff7ec": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "088049bc-696b-416d-b65a-fdcb44156295",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
