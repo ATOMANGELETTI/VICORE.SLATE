@@ -1,0 +1,21 @@
+rust-toolchain.toml
+  s_aab0917834f4b0::t_2422ead38837cc 1-4
+.tool-versions
+  s_aab0917834f4b0::t_46c4e00209fafd 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "8d937805459c722668dc9390bae5fa6f57dd0d44",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
