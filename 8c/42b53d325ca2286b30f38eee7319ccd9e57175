@@ -1,0 +1,25 @@
+.moon/toolchains.yml
+  s_aab0917834f4b0::t_5ed742fbb5c7dd 1-7
+.moon/workspace.yml
+  s_aab0917834f4b0::t_21075e5a2fed20 1-5,7
+  s_aab0917834f4b0::t_c97ad26e11d2db 6
+.moon/tasks/common.yml
+  s_aab0917834f4b0::t_b004047328312e 1-17
+  s_aab0917834f4b0::t_4f56e38adb0928 18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "8c42b53d325ca2286b30f38eee7319ccd9e57175",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
