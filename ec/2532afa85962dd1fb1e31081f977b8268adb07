@@ -1,0 +1,21 @@
+.cursor/rules/000-superpowers-plugin-paths.mdc
+  s_4750b854d15233::t_793976b3ad8ebf 1-51
+.superpowers/tasks/vicore-slate-scaffold.md
+  s_4750b854d15233::t_b44a532ed674f9 3-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "ec2532afa85962dd1fb1e31081f977b8268adb07",
+  "prompts": {},
+  "sessions": {
+    "s_4750b854d15233": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a8822f72-3118-4113-8c6a-ba192a55fc49",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
