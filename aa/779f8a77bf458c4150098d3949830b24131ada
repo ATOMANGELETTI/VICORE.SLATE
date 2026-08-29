@@ -1,0 +1,50 @@
+packages/config-vite/vitest.config.ts
+  s_8b80a0239dc3c7::t_32b8a85b0d9c22 1-5
+.moon/workspace.yml
+  s_8b80a0239dc3c7::t_7fe8fe805da1fc 2-4
+packages/config-vite/tsconfig.json
+  s_8b80a0239dc3c7::t_f3d9dba6c62264 1-5
+packages/config-typescript/moon.yml
+  s_8b80a0239dc3c7::t_fa581df2a3f9e8 1
+  s_8b80a0239dc3c7::t_3444166de160d8 2
+  s_8b80a0239dc3c7::t_cf7b15a6fc68e3 3-5
+packages/config-vite/src/index.ts
+  s_8b80a0239dc3c7::t_502269f819bf61 1-18
+  s_8b80a0239dc3c7::t_c9354117b052d0 19
+packages/config-vite/moon.yml
+  s_8b80a0239dc3c7::t_8298b6de43a2e2 2,6-15
+  s_8b80a0239dc3c7::t_96f917ae2e36a4 1
+  s_8b80a0239dc3c7::t_acb1607784d0ea 3-5
+tests/unit/config-vite/create-slate-vite-config.test.ts
+  s_8b80a0239dc3c7::t_11b27a31167e23 1-22
+packages/config-vite/package.json
+  s_8b80a0239dc3c7::t_0f976e08e5dd68 1-13
+  s_8b80a0239dc3c7::t_25bf3f109d64c9 14-18
+tsconfig.json
+  s_8b80a0239dc3c7::t_5446cc01f8a173 3
+vitest.workspace.ts
+  s_8b80a0239dc3c7::t_38b2d5b936a8c8 6-16
+bun.lock
+  s_8b80a0239dc3c7::t_f477c737adcdb6 25-36,183-184,235-236,263-264
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "aa779f8a77bf458c4150098d3949830b24131ada",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
