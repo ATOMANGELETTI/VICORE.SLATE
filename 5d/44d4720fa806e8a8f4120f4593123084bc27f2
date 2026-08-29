@@ -1,0 +1,31 @@
+.moon/workspace.yml
+  s_6bc42661d68e01::t_e09e2eda51008b 2
+.superpowers/plans/vicore-slate-scaffold/phase.01.md
+  s_6bc42661d68e01::t_077056d2626a41 2195-2206,2208-2212
+  s_6bc42661d68e01::t_a4774626aab762 2222
+  s_6bc42661d68e01::t_568d10864d33a7 1256-1268,1271
+  s_6bc42661d68e01::t_61c0a125f2d51d 1281,1514-1520,1523,1548-1550
+  s_6bc42661d68e01::t_fc577efb6b92f6 1551-1555
+  s_6bc42661d68e01::t_ddbc5e180cde87 1277-1280
+  s_6bc42661d68e01::t_cae42f7a82072a 1830-1832
+tsconfig.json
+  s_6bc42661d68e01::t_d79e36df260de5 2
+vitest.workspace.ts
+  s_6bc42661d68e01::t_c7480006056757 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "5d44d4720fa806e8a8f4120f4593123084bc27f2",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
