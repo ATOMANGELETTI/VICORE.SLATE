@@ -1,0 +1,19 @@
+.cursor/rules/003-rust-tauri-guidelines.mdc
+  s_089463684dcd2d::t_8cd2a59e2f03e0 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "8446c7e3612239029353518fc9ed05c8d913ee60",
+  "prompts": {},
+  "sessions": {
+    "s_089463684dcd2d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f5e61012-3591-40fc-999a-8e8e9579b2e3",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
