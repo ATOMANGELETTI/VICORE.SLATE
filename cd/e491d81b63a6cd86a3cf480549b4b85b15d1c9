@@ -1,0 +1,23 @@
+package.json
+  s_aab0917834f4b0::t_fe6dac4587081c 1-28
+bunfig.toml
+  s_aab0917834f4b0::t_7ea00827dff3ec 1-7
+bun.lock
+  s_aab0917834f4b0::t_a02796a073e803 1-429
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "cde491d81b63a6cd86a3cf480549b4b85b15d1c9",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
