@@ -1,0 +1,21 @@
+AGENTS.md
+  s_4a787a7abe3701::t_3dbdb19a42c718 3-15
+.cursorrules
+  s_4a787a7abe3701::t_1de3b35e7c9f64 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "99681dbfd545afffb8e2ff84717a74dcf655e926",
+  "prompts": {},
+  "sessions": {
+    "s_4a787a7abe3701": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "3380ef77-d1bd-4d5b-a29c-2fbe6106042c",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
