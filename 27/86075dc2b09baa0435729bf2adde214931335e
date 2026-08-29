@@ -1,0 +1,21 @@
+.changeset/config.json
+  s_aab0917834f4b0::t_74c409ece81f62 1-9
+.changeset/README.md
+  s_aab0917834f4b0::t_8eb233ccb2088f 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "2786075dc2b09baa0435729bf2adde214931335e",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
