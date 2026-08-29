@@ -1,0 +1,33 @@
+tests/unit/cargo-workspace-guard.test.ts
+  s_e1349fba860281::t_043d56684120cb 1-55
+.husky/pre-commit
+  s_e1349fba860281::t_10673f47489f7a 2
+scripts/check-toolchain-versions.ts
+  s_e1349fba860281::t_02ff17ca5a5c7f 1-44
+scripts/cargo-workspace-guard.ts
+  s_e1349fba860281::t_f4334c73e870fd 1-44
+.github/workflows/ci.yml
+  s_e1349fba860281::t_4cc0c7b048da4f 1-24
+tests/unit/check-toolchain-versions.test.ts
+  s_e1349fba860281::t_8f9cbeaf69c5e5 1-21
+bun.lock
+  s_e1349fba860281::t_d29b786b91183f 7-9
+package.json
+  s_e1349fba860281::t_86bf16bb9c3670 36-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "74484e76f40e762431b92a78e08244d2ede7a273",
+  "prompts": {},
+  "sessions": {
+    "s_e1349fba860281": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "e39b8c78-14a2-4111-8b1f-634e3fb073c1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
