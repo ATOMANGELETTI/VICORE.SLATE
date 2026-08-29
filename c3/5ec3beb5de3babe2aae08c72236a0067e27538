@@ -1,0 +1,41 @@
+.superpowers/plans/vicore-slate-scaffold/phase.01.md
+  s_6bc42661d68e01::t_dd79b3569eb26e 1263
+  s_6bc42661d68e01::t_0a271d2f0f9080 1750
+  s_6bc42661d68e01::t_fc11f13551efef 1082-1102,1105-1109,1111,1114,1116
+  s_6bc42661d68e01::t_d877bbfc468963 1007,1014
+  s_6bc42661d68e01::t_e0fedb871f83fc 1544
+  s_6bc42661d68e01::t_12f16caafb517e 1546-1547,1551,1560-1691,1712
+  s_6bc42661d68e01::t_0b5ebef81b447a 1776
+  s_6bc42661d68e01::t_020625f6c30add 1693-1706
+  s_6bc42661d68e01::t_a6b84eda58e45f 1187-1195,1200-1202,1204,1218,1221-1223
+  s_6bc42661d68e01::t_8e29e14acede37 1692,1707
+.cursorrules
+  h_90ad036e211778 2-3
+.superpowers/plans/vicore-slate-scaffold/phase.02.md
+  s_6bc42661d68e01::t_849b208f2c3ae4 255-267
+.superpowers/plans/vicore-slate-scaffold/phase.03.md
+  s_6bc42661d68e01::t_21df6138f7343e 609-619
+  s_6bc42661d68e01::t_e5052858d92b59 593-595
+  s_6bc42661d68e01::t_0102388c59dc6d 620
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "c35ec3beb5de3babe2aae08c72236a0067e27538",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
