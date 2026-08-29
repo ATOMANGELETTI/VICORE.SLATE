@@ -1,0 +1,29 @@
+.husky/pre-commit
+  s_aab0917834f4b0::t_8988dd19601c1e 1-2
+.husky/pre-push
+  s_aab0917834f4b0::t_0016da9772ef4e 1
+.husky/commit-msg
+  s_aab0917834f4b0::t_075db47d50588a 1
+commitlint.config.ts
+  s_aab0917834f4b0::t_5d6594fbd45b78 1-7
+.husky/_/.gitignore
+  s_aab0917834f4b0::t_75d18ea34ee123 1
+package.json
+  s_aab0917834f4b0::t_d3163d91c75350 5-8,20-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "42a6b45bc0f1222d3dbadc4b3a9a7cbd2eea06a1",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
