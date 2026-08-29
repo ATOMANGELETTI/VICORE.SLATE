@@ -1,0 +1,22 @@
+tsconfig.json
+  s_aab0917834f4b0::t_d144986766aa11 1-3
+vitest.workspace.ts
+  s_aab0917834f4b0::t_f926c105a68f3b 1-4,6-11
+  s_aab0917834f4b0::t_8918120743fe8e 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "b265f8131dfb985ad097d1c524168bc99eec0c2d",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
