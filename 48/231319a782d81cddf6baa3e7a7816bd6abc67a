@@ -1,0 +1,27 @@
+.moon/workspace.yml
+  s_0acef02a8b7c96::t_4f4315edce98e9 2-4,6,10
+moon.yml
+  s_0acef02a8b7c96::t_f26498a66e438d 2
+  s_0acef02a8b7c96::t_b5acc5c06c3432 1,3-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "48231319a782d81cddf6baa3e7a7816bd6abc67a",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0acef02a8b7c96": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "061733bc-8538-417a-be8d-c712aca70659",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
