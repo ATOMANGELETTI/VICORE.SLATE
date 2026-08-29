@@ -1,0 +1,33 @@
+.moon/tasks/common.yml
+  s_aab0917834f4b0::t_b004047328312e 1-17
+  s_aab0917834f4b0::t_4f56e38adb0928 18
+.moon/toolchains.yml
+  s_aab0917834f4b0::t_5ed742fbb5c7dd 1-7
+.moon/workspace.yml
+  s_aab0917834f4b0::t_c97ad26e11d2db 6
+  s_aab0917834f4b0::t_21075e5a2fed20 1-5,7
+.moon/cache/CACHEDIR.TAG
+  s_aab0917834f4b0::t_8afb914e663682 1-3
+.moon/cache/hashes/9e74bd5446c00b3fab6e9af9f71c77efc51d9711e1610bbcd631f16efe2a9ca1.json
+  s_aab0917834f4b0::t_5c482dee9b84aa 1
+.moon/cache/states/workspaceGraph.json
+  s_aab0917834f4b0::t_929a73273e8dc9 1
+.moon/cache/states/workspaceGraphStateV1.json
+  s_aab0917834f4b0::t_2792ea73cec735 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "23395f0828d6abd0ddaa8130154de99a6f106537",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
