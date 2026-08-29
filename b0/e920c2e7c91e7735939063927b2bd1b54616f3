@@ -1,0 +1,21 @@
+cargo-mutants.toml
+  s_aab0917834f4b0::t_b019862075b92c 1-2
+tarpaulin.toml
+  s_aab0917834f4b0::t_fbb12a496bea92 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "b0e920c2e7c91e7735939063927b2bd1b54616f3",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
