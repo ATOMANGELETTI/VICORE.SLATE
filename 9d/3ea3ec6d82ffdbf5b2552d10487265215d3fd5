@@ -1,0 +1,34 @@
+scripts/templates/package/tsconfig.json
+  s_0acef02a8b7c96::t_6b10ba72577fc1 1-5
+scripts/templates/package/vitest.config.ts
+  s_0acef02a8b7c96::t_d955667777241f 1-5
+tests/unit/new-package.test.ts
+  s_0acef02a8b7c96::t_d24be4c4c885a2 1-26
+scripts/new-package.ts
+  s_0acef02a8b7c96::t_e7937c8b1bf04d 1-20
+scripts/templates/package/package.json
+  s_0acef02a8b7c96::t_9e372122db7a45 1-10
+scripts/templates/package/src/index.ts
+  s_0acef02a8b7c96::t_17cda98bae792c 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "9d3ea3ec6d82ffdbf5b2552d10487265215d3fd5",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0acef02a8b7c96": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "061733bc-8538-417a-be8d-c712aca70659",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
