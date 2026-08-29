@@ -31,11 +31,11 @@ Slate is a fully portable, thumbdrive/folder/drive-installable suite of AI-nativ
 
 ## Plan structure
 
-Split into 4 sequential phase-plans under this same folder, each independently verifiable:
+Split into 4 sequential phase-plans under `.superpowers/docs/plans/`, each independently verifiable:
 
-1. `phase.01.md` — Governance (`.cursor/rules`, `.superpowers/`) + Root Foundation + Tooling.
-2. `phase.02.md` — Shared Packages (`config-typescript`, `config-vite`, `ui-kit`, `slate-core` stub).
-3. `phase.03.md` — Template Apps x9 (generator-first: `scripts/new-app.ts` + template, then generate, then patch `slate-launcher`).
-4. `phase.04.md` — Release Packaging + remaining `scripts/` automation + full-graph verification.
+1. `2026-08-29-vicore-slate-scaffold.phase.01.md` — Governance (`.cursor/rules`, `.superpowers/`) + Root Foundation + Tooling.
+2. `2026-08-29-vicore-slate-scaffold.phase.02.md` — Shared Packages (`config-typescript`, `config-vite`, `ui-kit`, `slate-core` stub).
+3. `2026-08-29-vicore-slate-scaffold.phase.03.md` — Template Apps x9 (generator-first: `scripts/new-app.ts` + template, then generate, then patch `slate-launcher`).
+4. `2026-08-29-vicore-slate-scaffold.phase.04.md` — Release Packaging + remaining `scripts/` automation + full-graph verification.
 
-See `progress.md` in this folder for the live status of execution, and `.superpowers/tasks/vicore-slate-scaffold.md` for the current at-a-glance status.
+See `.superpowers/docs/progress/vicore-slate-scaffold.md` for the detailed execution log, and `.superpowers/docs/tasks/vicore-slate-scaffold.md` for the lean at-a-glance checklist (status + model). Convention is enforced by `.cursor/rules/000-superpowers-plugin-paths.mdc`.

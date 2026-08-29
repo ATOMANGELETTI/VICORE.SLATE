@@ -5,3 +5,7 @@
 
 # Isolated git worktrees (superpowers:using-git-worktrees)
 .worktrees/
+
+# Superpowers plugin scratch (design history under .superpowers/docs is committed)
+.superpowers/brainstorm/
+.superpowers/sdd/

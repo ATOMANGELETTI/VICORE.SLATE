@@ -14,116 +14,75 @@
 - Every automation script is Bun-executed TypeScript (`scripts/*.ts`), never `.ps1`/shell-only.
 - Dot-segmented names for multi-axis variant files (e.g. `tauri.windows.conf.json`) — established convention, referenced by rules in this phase, first applied to real files in Phase 2/3.
 - All test code lives under `tests/` — this phase's two real TDD tasks are `scripts/sync-crate-versions.ts` (Task 15, tested by `tests/unit/sync-crate-versions.test.ts`) and `scripts/check-toolchain-versions.ts` (Task 26, tested by `tests/unit/check-toolchain-versions.test.ts`); every other task is config/docs with no test code of its own.
-- `.superpowers/{plans,tasks,reviews,docs}/` is the only destination for Superpowers-generated **design** artifacts (committed to git), organized per-feature (`plans/<slug>/` holds that feature's entire design record — spec, phases, progress — `tasks/<slug>.md`, `reviews/<slug>/`; `docs/` stays flat for the rare cross-feature note). `.superpowers/sdd/` is a separate, git-ignored **scratch** workspace the subagent-driven-development tooling manages itself (task briefs, implementer reports, review packages, its own progress ledger) — never hand-create or commit anything there.
+- Superpowers design artifacts are committed under `.superpowers/docs/{specs,plans,tasks,progress}/` plus `.superpowers/reviews/<slug>/` (see `000-superpowers-plugin-paths.mdc`). Plugin scratch stays at gitignored `.superpowers/brainstorm/` (visual companion; path hardcoded by the plugin) and `.superpowers/sdd/` (SDD tooling) — never hand-create or commit scratch.
 - No deprecated/legacy tool versions — pin whatever `bun add -D <pkg>@latest` / `cargo add` resolves to at execution time, not a number guessed today.
 
 **Later phases (not covered by this plan):** Phase 2 — Shared Packages (`packages/config-typescript`, `packages/config-vite`, `packages/ui-kit`, `crates/slate-core` stub). Phase 3 — Template Apps x9 (generator-first: `scripts/new-app.ts` + `scripts/templates/app/`, then generate all 9, then hand-patch `slate-launcher`'s tray/isolation extras). Phase 4 — Release Packaging + remaining `scripts/` automation + full-graph verification.
 
 ---
 
-### Task 1: `.superpowers/` directories (modular, per-feature) + the Superpowers path rule
+### Task 1: `.superpowers/` docs layout + the Superpowers path rule
 
 **Files:**
 
-- Create: `.superpowers/docs/.gitkeep`
-- Create: `.superpowers/plans/vicore-slate-scaffold/` (already populated by this very plan set — `spec.md`, `phase.01.md`, `phase.02.md`, `phase.03.md`, `phase.04.md`, `progress.md`)
-- Create: `.superpowers/tasks/vicore-slate-scaffold.md` (already created)
-- Create: `.superpowers/reviews/vicore-slate-scaffold/.gitkeep` (already created)
+- Create/ensure: `.superpowers/docs/{specs,plans,tasks,progress}/`
+- Create/ensure: `.superpowers/docs/specs/2026-08-29-vicore-slate-scaffold-design.md` (and any other feature specs)
+- Create/ensure: `.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.0N.md`
+- Create/ensure: `.superpowers/docs/tasks/vicore-slate-scaffold.md` (lean checklist + model)
+- Create/ensure: `.superpowers/docs/progress/vicore-slate-scaffold.md`
+- Create/ensure: `.superpowers/reviews/vicore-slate-scaffold/.gitkeep`
 - Create: `.cursor/rules/000-superpowers-plugin-paths.mdc`
+- Update: root `.gitignore` with `.superpowers/brainstorm/` and `.superpowers/sdd/`
 
 **Interfaces:**
 
 - Consumes: nothing (first task in the project)
-- Produces: the `.superpowers/` directory tree every later Superpowers skill invocation must write into, using a modular one-feature-per-folder convention (matching this project's own `002-monorepo-and-naming.mdc` philosophy); the governing redirection rule every other rule assumes is active
+- Produces: the `.superpowers/` tree every later Superpowers skill invocation must write into; the governing redirection rule every other rule assumes is active
 
-**Note:** this task is largely already done — the `.superpowers/` tree and this very plan set were created directly while writing this plan (see `.superpowers/plans/vicore-slate-scaffold/progress.md`). An earlier pass over-split this into 6 top-level buckets (`docs/plans/specs/sdd/tasks/reviews`), which left `specs/` and `sdd/` sitting empty and redundant with `plans/<slug>/spec.md` — that's been collapsed to the leaner 4-bucket layout below. The step below writes the one file that doesn't yet exist for real: the `.cursor/rules/000-superpowers-plugin-paths.mdc` rule itself. The other steps are included so this task is fully reproducible from scratch for a future feature.
+**Note:** the design tree and this plan set already exist under `.superpowers/docs/`. Steps below are the reproducible contract; execution should verify the tree, write/refresh `000-superpowers-plugin-paths.mdc`, update `.gitignore`, and keep `docs/tasks/` lean.
 
-- [ ] **Step 1: Create the top-level `.superpowers/` category directories**
+- [ ] **Step 1: Ensure the `.superpowers/` category directories**
 
 ```bash
-mkdir -p .superpowers/docs .superpowers/tasks .superpowers/reviews
-touch .superpowers/docs/.gitkeep
+mkdir -p .superpowers/docs/specs .superpowers/docs/plans .superpowers/docs/tasks .superpowers/docs/progress .superpowers/reviews
 ```
 
-`.superpowers/plans/` doesn't get a `.gitkeep` — it's populated immediately
-below with this feature's real files, and every future feature creates its
-own `plans/<slug>/` subfolder directly (no separate staging bucket).
+Do not create top-level `.superpowers/plans/` or `.superpowers/tasks/`. Do not create `.superpowers/brainstorm/` or `.superpowers/sdd/` by hand — plugins create those on demand.
 
 - [ ] **Step 2: Verify the directories exist**
 
 Run: `Get-ChildItem -Recurse -Force .superpowers | ForEach-Object { $_.FullName }`
-Expected: `docs/` with one `.gitkeep`; `plans/vicore-slate-scaffold/` with `spec.md`, `phase.01.md`–`phase.04.md`, `progress.md`; `tasks/vicore-slate-scaffold.md`; `reviews/vicore-slate-scaffold/.gitkeep`. No top-level `specs/` or `sdd/`.
+Expected: `docs/specs/`, `docs/plans/` (dated / dot-segmented plan files), `docs/tasks/<slug>.md`, `docs/progress/<slug>.md`, `reviews/<slug>/.gitkeep`. No top-level `plans/` or `tasks/`. Scratch dirs `brainstorm/` / `sdd/` may be absent until first use.
 
 - [ ] **Step 3: Write `.cursor/rules/000-superpowers-plugin-paths.mdc`**
 
-```markdown
----
-description: Redirect all Superpowers plugin artifacts into .superpowers/, organized per-feature
-alwaysApply: true
----
-
-# Superpowers Artifact Redirection
-
-Whenever any Superpowers skill (brainstorming, writing-plans, executing-plans,
-subagent-driven-development, spec-driven-development, requesting/receiving
-code review, etc.) would write a design spec, implementation plan,
-task-status file, progress report, code-review artifact, or other
-autogenerated artifact to its own default location, write it instead under
-this repo's `.superpowers/` directory, using the modular
-one-feature-per-folder convention (matching `002-monorepo-and-naming.mdc`).
-There are exactly four top-level buckets — do not add more without updating
-this rule:
-
-- `.superpowers/plans/<feature-slug>/` — the entire per-feature **design**
-  record, created as soon as brainstorming starts on that feature (not
-  staged elsewhere first). Contains `spec.md` (the design spec), dot-segmented
-  `phase.01.md`, `phase.02.md`, ... (one file per phase/sub-plan, added once
-  `writing-plans` runs), and `progress.md` (a full, detailed, append-only
-  report of what has been done, what's in flight, and what's next) —
-  nothing about one feature's design record is ever split across multiple
-  top-level buckets.
-- `.superpowers/tasks/<feature-slug>.md` — one simple, single-file status
-  tracker per feature: current phase/task, what the agent is doing right
-  now, what's next. Kept short — a glanceable dashboard, overwritten in
-  place (not appended); `progress.md` is where the detailed history lives.
-- `.superpowers/reviews/<feature-slug>/` — requesting-code-review /
-  receiving-code-review skill output for that feature.
-- `.superpowers/docs/` — general notes/docs not tied to any one feature.
-  This should stay small and rare; anything tied to a specific feature goes
-  in that feature's own `plans/<feature-slug>/` folder instead, never here.
-- `.superpowers/sdd/` — **not** part of the four design buckets above.
-  This one is a flat, git-ignored **scratch** workspace that the
-  subagent-driven-development skill's own tooling creates and manages
-  (task briefs, implementer reports, review-package diffs, its own
-  progress ledger). Never hand-create files there and never commit
-  anything from it — the skill's `sdd-workspace` script writes a
-  self-ignoring `.gitignore` into it the first time it runs.
-
-`<feature-slug>` is a kebab-case slug shared across every bucket for the
-same piece of work (e.g. `vicore-slate-scaffold`), so `plans/<slug>/`,
-`tasks/<slug>.md`, and `reviews/<slug>/` all line up and a feature's full
-history is findable from any one of them.
-
-`.superpowers/` is committed to git (it is real project design history),
-unlike the personal `.devlog/` folder which stays git/cursorignored. This
-rule loads before every other rule in this repository and must never be
-deleted or disabled.
-```
+Write the always-apply rule documenting: `docs/specs/`, `docs/plans/` (incl. `.phase.NN.md`), lean `docs/tasks/` (+ model), `docs/progress/`, `reviews/`, gitignored `brainstorm/` (hardcoded — never `brainstorming/`) and `sdd/`. Keep the rule body in sync with the committed file (do not invent a second layout).
 
 - [ ] **Step 4: Verify the rule file's frontmatter is well-formed**
 
 Run: `Get-Content .cursor/rules/000-superpowers-plugin-paths.mdc | Select-Object -First 4`
 Expected: the three `---`-delimited frontmatter lines print first, with `alwaysApply: true` present.
 
-- [ ] **Step 5: Update this feature's task-status file to reflect Phase 1 execution starting**
+- [ ] **Step 5: Ensure root `.gitignore` ignores only scratch**
 
-Overwrite `.superpowers/tasks/vicore-slate-scaffold.md`'s "Current phase"/"Doing now" lines to say execution of `phase.01.md` has begun (in place — this file is always overwritten, never appended).
+Append (if missing):
 
-- [ ] **Step 6: Commit**
+```gitignore
+.superpowers/brainstorm/
+.superpowers/sdd/
+```
+
+Do not gitignore the rest of `.superpowers/`.
+
+- [ ] **Step 6: Update this feature's lean task-status file**
+
+Refresh `.superpowers/docs/tasks/vicore-slate-scaffold.md` status header (Current phase / Doing now / Model (doing now) / Next / Blocked on) for Phase 1 Task 1 in-flight. Do not flip step checkboxes inside this phase file. Long narrative goes in `.superpowers/docs/progress/vicore-slate-scaffold.md`.
+
+- [ ] **Step 7: Commit**
 
 ```bash
-git add .superpowers/ .cursor/rules/000-superpowers-plugin-paths.mdc
-git commit -m "chore: redirect superpowers artifacts into .superpowers/, modular per-feature"
+git add .superpowers/ .cursor/rules/000-superpowers-plugin-paths.mdc .gitignore
+git commit -m "chore: redirect superpowers artifacts into .superpowers/docs/"
 ```
 
 ---
@@ -765,6 +724,77 @@ git commit -m "docs: add release packaging layout rule"
 
 ---
 
+### Task 12b: `.cursor/rules/012-agent-model-selection.mdc` + AGENTS.md preference
+
+**Files:**
+
+- Create: `.cursor/rules/012-agent-model-selection.mdc`
+- Modify: `AGENTS.md` (Learned User Preferences + Learned Workspace Facts rule-range)
+
+**Interfaces:**
+
+- Consumes: nothing
+- Produces: the always-apply model-selection policy every Superpowers / Task / multi-agent launch must follow; preference bullet mirrored in `AGENTS.md`
+
+**Note:** Inserted after Task 12 without renumbering Tasks 13+. Design record: `.superpowers/docs/specs/2026-08-29-agent-model-selection-design.md`.
+
+- [ ] **Step 1: Write the rule**
+
+```markdown
+---
+description: Choose the best enabled model per task; default Grok 4.6; escalate when needed
+alwaysApply: true
+---
+
+# Agent Model Selection
+
+Before Superpowers workflows, Task/subagent launches, or other multi-agent work,
+decide which enabled model fits that unit of work.
+
+## Default
+
+Prefer Grok 4.6 (Task slug `cursor-grok-4.6-xhigh-fast` when a model must be set).
+It is capable enough for most implementation, exploration, shell, and scaffolding.
+
+## Escalate when the task needs it
+
+Use a stronger enabled model (examples: Kimi K3 / `kimi-k3-max`, Claude Opus)
+when the work is high-stakes or capability-bound — e.g. deep architecture /
+brainstorming, writing complex plans, security review, or hard debugging after
+a weaker pass. Prefer Grok when capability is close enough; escalate on genuine
+need, not habit.
+
+## Constraints
+
+- Only models enabled in the current session / Task allowlist — never invent slugs.
+- Explicit user model requests always win.
+- Do not announce the model every turn; optional brief note when escalating.
+```
+
+- [ ] **Step 2: Verify frontmatter**
+
+Run: `Get-Content .cursor/rules/012-agent-model-selection.mdc | Select-Object -First 4`
+Expected: frontmatter with `alwaysApply: true`.
+
+- [ ] **Step 3: Ensure AGENTS.md preference + rule-range fact**
+
+Under `## Learned User Preferences`, ensure this bullet exists (add if missing):
+
+```markdown
+- Prefer Grok 4.6 as the default agent/subagent model; before Superpowers or multi-agent work, choose the best enabled model for the task and escalate (e.g. Kimi K3) when higher capability is needed.
+```
+
+Under `## Learned Workspace Facts`, ensure the `.cursor/rules/` bullet mentions `000`–`012` and `012-agent-model-selection.mdc`.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add .cursor/rules/012-agent-model-selection.mdc AGENTS.md
+git commit -m "docs: add agent model selection rule (default Grok 4.6)"
+```
+
+---
+
 ### Task 13: `.cursor/commands/{new-app,new-package,new-crate}.md`
 
 **Files:**
@@ -861,11 +891,12 @@ suite of AI-native desktop apps — a portable AI operating system. Bun + moon
 v2 + Rust/Tauri v2 monorepo: `apps/` (9 Tauri apps), `packages/` (shared TS:
 `@slate/ui-kit`, `@slate/config-typescript`, `@slate/config-vite`), `crates/`
 (shared Rust, `slate-core` stub only). Full architecture, tooling, and
-per-topic rules live in `.cursor/rules/000` through `011` — read the matching
+per-topic rules live in `.cursor/rules/000` through `012` — read the matching
 numbered rule before touching monorepo tooling, Rust/Tauri code, TS/React
 code, ui-kit, app shells, theming, tests, deferred-scope items, git/versioning,
-or release packaging. There is no `CLAUDE.md` in this project — `.cursorrules`
-is a thin pointer to this file for cross-tool compatibility.
+release packaging, or agent model selection. There is no `CLAUDE.md` in this
+project — `.cursorrules` is a thin pointer to this file for cross-tool
+compatibility.
 ```
 
 - [ ] **Step 3: Write `.cursorrules`**

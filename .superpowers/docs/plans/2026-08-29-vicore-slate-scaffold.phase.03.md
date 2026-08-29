@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 >
-> **Prerequisite:** Phase 2 (`.superpowers/plans/vicore-slate-scaffold/phase.02.md`) must be fully verified before starting this plan — every app built here depends on `@slate/ui-kit`, `@slate/config-typescript`, `@slate/config-vite`, and `slate-core`.
+> **Prerequisite:** Phase 2 (`.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.02.md`) must be fully verified before starting this plan — every app built here depends on `@slate/ui-kit`, `@slate/config-typescript`, `@slate/config-vite`, and `slate-core`.
 
 **Goal:** Build a single `scripts/new-app.ts` generator + `scripts/templates/app/` template (with its own tests), use it to scaffold all 9 apps identically, then hand-patch `slate-launcher`'s tray/isolation-consuming extras — ending with all 9 apps buildable, typecheck-clean, and passing their own unit + e2e smoke tests.
 
@@ -24,6 +24,7 @@
 ### Task 1: `scripts/templates/app/` — the template tree
 
 **Files:**
+
 - Create: `scripts/templates/app/isolation/index.html`
 - Create: `scripts/templates/app/isolation/index.ts`
 - Create: `scripts/templates/app/src/main.tsx`
@@ -56,6 +57,7 @@
 - Create: `scripts/templates/app/tests/e2e/app.spec.ts`
 
 **Interfaces:**
+
 - Consumes: `@slate/ui-kit` (Phase 2), `@slate/config-typescript`, `@slate/config-vite` (Phase 2)
 - Produces: the literal file tree Task 2's `scripts/new-app.ts` copies + substitutes `{{name}}` (kebab-case, e.g. `terminal`) and `{{title}}` (Title Case, e.g. `Terminal`) into
 
@@ -64,8 +66,12 @@
 ```html
 <!doctype html>
 <html>
-  <head><meta charset="utf-8" /></head>
-  <body><script type="module" src="./index.ts"></script></body>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="module" src="./index.ts"></script>
+  </body>
 </html>
 ```
 
@@ -102,7 +108,9 @@ createRoot(rootElement).render(
 ```css
 @import "@slate/ui-kit/src/styles/main.css";
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
@@ -166,7 +174,9 @@ export function TemplateView() {
 
   return (
     <div className="flex h-full flex-col items-center justify-center gap-2">
-      <h1 className="text-xl font-semibold">{{title}} Template Application</h1>
+      <h1 className="text-xl font-semibold">
+        {{ title }} Template Application
+      </h1>
       <p className="text-sm text-[var(--nord3)]">App Version {version}</p>
     </div>
   );
@@ -183,7 +193,9 @@ export * from "./template-view";
 
 ```tsx
 export function AppToolbar() {
-  return <span className="text-xs text-[var(--nord3)]">{{title}} — Ready</span>;
+  return (
+    <span className="text-xs text-[var(--nord3)]">{{ title }} — Ready</span>
+  );
 }
 ```
 
@@ -291,9 +303,19 @@ fn main() {
   "version": "0.1.0",
   "identifier": "com.vicore.slate.{{name}}",
   "app": {
-    "windows": [{ "title": "{{title}}", "width": 960, "height": 640, "decorations": false }],
+    "windows": [
+      {
+        "title": "{{title}}",
+        "width": 960,
+        "height": 640,
+        "decorations": false
+      }
+    ],
     "security": {
-      "pattern": { "use": "isolation", "options": { "dir": "../dist-isolation" } }
+      "pattern": {
+        "use": "isolation",
+        "options": { "dir": "../dist-isolation" }
+      }
     }
   },
   "build": { "beforeBuildCommand": "bun run build", "frontendDist": "../dist" },
@@ -325,7 +347,10 @@ fn main() {
 ```html
 <!doctype html>
 <html>
-  <head><meta charset="utf-8" /><title>{{title}}</title></head>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{title}}</title>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
@@ -429,13 +454,17 @@ import { describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { TemplateView } from "../../../../src/modules/template-view/template-view";
 
-vi.mock("@tauri-apps/api/app", () => ({ getVersion: () => Promise.resolve("0.1.0") }));
+vi.mock("@tauri-apps/api/app", () => ({
+  getVersion: () => Promise.resolve("0.1.0"),
+}));
 
 describe("TemplateView", () => {
   it("shows the template heading and live version", async () => {
     render(<TemplateView />);
     expect(screen.getByText(/Template Application/)).toBeInTheDocument();
-    await waitFor(() => expect(screen.getByText(/App Version 0.1.0/)).toBeInTheDocument());
+    await waitFor(() =>
+      expect(screen.getByText(/App Version 0.1.0/)).toBeInTheDocument(),
+    );
   });
 });
 ```
@@ -463,10 +492,12 @@ git commit -m "feat: add the shared app template tree"
 ### Task 2: `scripts/new-app.ts` generator (TDD)
 
 **Files:**
+
 - Create: `tests/unit/new-app.test.ts`
 - Create: `scripts/new-app.ts`
 
 **Interfaces:**
+
 - Consumes: `scripts/templates/app/` (Task 1)
 - Produces: `generateApp(name: string, targetDir: string): void` — Task 3 runs this 9 times; `.cursor/commands/new-app.md` (Phase 1 Task 13) documents it as the only way to create an app
 
@@ -494,8 +525,12 @@ describe("generateApp", () => {
     const appDir = join(targetRoot, "slate-terminal");
     generateApp("terminal", appDir);
 
-    expect(existsSync(join(appDir, "src", "modules", "app", "app.tsx"))).toBe(true);
-    expect(existsSync(join(appDir, "src-tauri", "capabilities", "default.json"))).toBe(true);
+    expect(existsSync(join(appDir, "src", "modules", "app", "app.tsx"))).toBe(
+      true,
+    );
+    expect(
+      existsSync(join(appDir, "src-tauri", "capabilities", "default.json")),
+    ).toBe(true);
     expect(existsSync(join(appDir, "isolation", "index.ts"))).toBe(true);
   });
 
@@ -503,10 +538,16 @@ describe("generateApp", () => {
     const appDir = join(targetRoot, "slate-terminal");
     generateApp("terminal", appDir);
 
-    const cargoToml = readFileSync(join(appDir, "src-tauri", "Cargo.toml"), "utf-8");
+    const cargoToml = readFileSync(
+      join(appDir, "src-tauri", "Cargo.toml"),
+      "utf-8",
+    );
     expect(cargoToml).toContain('name = "slate-terminal"');
 
-    const appTsx = readFileSync(join(appDir, "src", "modules", "app", "app.tsx"), "utf-8");
+    const appTsx = readFileSync(
+      join(appDir, "src", "modules", "app", "app.tsx"),
+      "utf-8",
+    );
     expect(appTsx).toContain('title="Terminal"');
   });
 
@@ -514,7 +555,10 @@ describe("generateApp", () => {
     const appDir = join(targetRoot, "slate-aistudio");
     generateApp("aistudio", appDir);
 
-    const appTsx = readFileSync(join(appDir, "src", "modules", "app", "app.tsx"), "utf-8");
+    const appTsx = readFileSync(
+      join(appDir, "src", "modules", "app", "app.tsx"),
+      "utf-8",
+    );
     expect(appTsx).toContain('title="Aistudio"');
   });
 });
@@ -528,7 +572,13 @@ Expected: FAIL — module not found.
 - [ ] **Step 3: Write the minimal implementation**
 
 ```typescript
-import { cpSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  readdirSync,
+  readFileSync,
+  statSync,
+  writeFileSync,
+} from "node:fs";
 import { join } from "node:path";
 
 const TEMPLATE_DIR = join(import.meta.dir, "templates", "app");
@@ -588,11 +638,13 @@ git commit -m "feat: add new-app generator script"
 ### Task 3: Generate the 8 non-launcher apps
 
 **Files:**
+
 - Create: `apps/slate-terminal/**`, `apps/slate-explorer/**`, `apps/slate-browser/**`, `apps/slate-editor/**`, `apps/slate-gallery/**`, `apps/slate-jukebox/**`, `apps/slate-player/**`, `apps/slate-aistudio/**` (all generated, none hand-written)
 - Modify: `tsconfig.json` (root — add 8 references)
 - Modify: `Cargo.toml` (no change needed — `apps/*/src-tauri` glob already matches)
 
 **Interfaces:**
+
 - Consumes: `scripts/new-app.ts` (Task 2)
 - Produces: 8 fully scaffolded apps, each independently buildable/testable
 
@@ -654,6 +706,7 @@ git commit -m "feat: generate 8 template apps from the shared generator"
 ### Task 4: Generate `slate-launcher`, then hand-patch its tray extras (TDD for the Rust tray module)
 
 **Files:**
+
 - Create: `apps/slate-launcher/**` (generated base, same as Task 3)
 - Create: `apps/slate-launcher/src-tauri/capabilities/tray-menu.json`
 - Create: `apps/slate-launcher/src-tauri/src/modules/tray/mod.rs`
@@ -664,6 +717,7 @@ git commit -m "feat: generate 8 template apps from the shared generator"
 - Modify: `tsconfig.json` (root — add reference)
 
 **Interfaces:**
+
 - Consumes: `scripts/new-app.ts` (Task 2)
 - Produces: `slate_launcher_lib::modules::tray::build_tray(app: &tauri::App) -> tauri::Result<()>` (Rust), `listenForTrayMenuActions(): void` (TS) — nothing outside `slate-launcher` depends on these; they are the one intentional structural difference from the other 8 apps
 
@@ -781,12 +835,17 @@ import { listenForTrayMenuActions } from "../../../../src/modules/tray-menu/tray
 
 const listen = vi.fn().mockResolvedValue(() => {});
 
-vi.mock("@tauri-apps/api/event", () => ({ listen: (...args: unknown[]) => listen(...args) }));
+vi.mock("@tauri-apps/api/event", () => ({
+  listen: (...args: unknown[]) => listen(...args),
+}));
 
 describe("listenForTrayMenuActions", () => {
   it("subscribes to the tray-menu-action event", async () => {
     await listenForTrayMenuActions();
-    expect(listen).toHaveBeenCalledWith("tray-menu-action", expect.any(Function));
+    expect(listen).toHaveBeenCalledWith(
+      "tray-menu-action",
+      expect.any(Function),
+    );
   });
 });
 ```
@@ -844,6 +903,7 @@ git commit -m "feat: generate slate-launcher and add its tray-specific modules"
 **Files:** none created — verification only
 
 **Interfaces:**
+
 - Consumes: every file created in Tasks 1–4
 - Produces: confirmation all 9 apps are structurally sound before Phase 4 packages them
 

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 >
-> **Prerequisite:** Phase 1 (`.superpowers/plans/vicore-slate-scaffold/phase.01.md`) must be fully verified (its Task 27) before starting this plan — this plan's tasks append to files Phase 1 created (root `tsconfig.json`, `Cargo.toml`'s glob-matched members).
+> **Prerequisite:** Phase 1 (`.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.01.md`) must be fully verified (its Task 27) before starting this plan — this plan's tasks append to files Phase 1 created (root `tsconfig.json`, `Cargo.toml`'s glob-matched members).
 
 **Goal:** Build `packages/config-typescript`, `packages/config-vite`, the full `packages/ui-kit` design system (Nord tokens, Tailwind v4 theme, primitives via shadcn/Radix, hand-written composites, ThemeProvider), and the `crates/slate-core` stub — every piece independently unit-tested, so Phase 3's 9 apps have a real, working design system and Rust stub to build on.
 
@@ -24,12 +24,14 @@
 ### Task 1: `packages/config-typescript`
 
 **Files:**
+
 - Create: `packages/config-typescript/package.json`
 - Create: `packages/config-typescript/tsconfig.base.json`
 - Create: `packages/config-typescript/tsconfig.node.json`
 - Create: `packages/config-typescript/tsconfig.web.json`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: `tsconfig.web.json` (extended by `packages/ui-kit/tsconfig.json` in Task 4, and by every Phase 3 app) and `tsconfig.node.json` (extended by `packages/config-vite/tsconfig.json` in Task 2, and by root `scripts/*.ts`)
 
@@ -116,6 +118,7 @@ git commit -m "feat: add shared typescript config presets"
 ### Task 2: `packages/config-vite`
 
 **Files:**
+
 - Create: `tests/unit/config-vite/create-slate-vite-config.test.ts`
 - Create: `packages/config-vite/src/index.ts`
 - Create: `packages/config-vite/package.json`
@@ -124,6 +127,7 @@ git commit -m "feat: add shared typescript config presets"
 - Modify: `tsconfig.json` (root — add reference)
 
 **Interfaces:**
+
 - Consumes: `@slate/config-typescript` `tsconfig.node.json` (Task 1)
 - Produces: `createSlateViteConfig(options?: SlateViteConfigOptions): UserConfig` — consumed by `packages/ui-kit/vite.config.ts` (Task 4) and every Phase 3 app's `vite.config.ts`
 
@@ -147,7 +151,9 @@ describe("createSlateViteConfig", () => {
   });
 
   it("merges a caller-supplied extraConfig on top of the base", () => {
-    const config = createSlateViteConfig({ extraConfig: { server: { port: 4321 } } });
+    const config = createSlateViteConfig({
+      extraConfig: { server: { port: 4321 } },
+    });
     expect(config.server?.port).toBe(4321);
     expect(config.server?.strictPort).toBe(true);
   });
@@ -198,7 +204,9 @@ export interface SlateViteConfigOptions {
   extraConfig?: UserConfig;
 }
 
-export function createSlateViteConfig(options: SlateViteConfigOptions = {}): UserConfig {
+export function createSlateViteConfig(
+  options: SlateViteConfigOptions = {},
+): UserConfig {
   const base: UserConfig = {
     plugins: [react()],
     clearScreen: false,
@@ -248,12 +256,14 @@ git commit -m "feat: add shared vite config factory"
 ### Task 3: `crates/slate-core` stub
 
 **Files:**
+
 - Create: `crates/slate-core/Cargo.toml`
 - Create: `crates/slate-core/src/lib.rs`
 - Create: `crates/slate-core/tests/.gitkeep`
 - Create: `crates/slate-core/package.json`
 
 **Interfaces:**
+
 - Consumes: `Cargo.toml` workspace (`[workspace.dependencies]`, `[workspace.package]`), `scripts/sync-crate-versions.ts` (Phase 1 Task 15)
 - Produces: `slate_core::VERSION: &str`, and the Rust workspace's first real member (Phase 1's globbed `crates/*` member now resolves to something)
 
@@ -347,6 +357,7 @@ git commit -m "feat: add slate-core stub crate"
 ### Task 4: `packages/ui-kit` bootstrap
 
 **Files:**
+
 - Create: `packages/ui-kit/package.json`
 - Create: `packages/ui-kit/tsconfig.json`
 - Create: `packages/ui-kit/vite.config.ts`
@@ -357,6 +368,7 @@ git commit -m "feat: add slate-core stub crate"
 - Modify: `tsconfig.json` (root — add reference)
 
 **Interfaces:**
+
 - Consumes: `@slate/config-typescript` (Task 1), `@slate/config-vite` (Task 2)
 - Produces: the empty barrel `src/index.ts` every subsequent task in this plan appends an `export *` line to; the `tests/unit/**` Vitest environment every subsequent task's tests run under
 
@@ -515,6 +527,7 @@ git commit -m "feat: bootstrap packages/ui-kit"
 ### Task 5: Nord token files (`src/tokens/`)
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/tokens/nord-tokens.test.ts`
 - Create: `packages/ui-kit/src/tokens/theme.nord.polar-night.css`
 - Create: `packages/ui-kit/src/tokens/theme.nord.snow-storm.css`
@@ -523,6 +536,7 @@ git commit -m "feat: bootstrap packages/ui-kit"
 - Create: `packages/ui-kit/src/tokens/theme.nord.css`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: `--nord0` through `--nord15` CSS custom properties, consumed by `src/styles/main.css` (Task 6)
 
@@ -560,7 +574,13 @@ describe("nord token files", () => {
 
   it("aurora defines nord11 through nord15", () => {
     const css = read("theme.nord.aurora.css");
-    for (const name of ["--nord11", "--nord12", "--nord13", "--nord14", "--nord15"]) {
+    for (const name of [
+      "--nord11",
+      "--nord12",
+      "--nord13",
+      "--nord14",
+      "--nord15",
+    ]) {
       expect(css).toContain(`${name}:`);
     }
   });
@@ -654,10 +674,12 @@ git commit -m "feat: add nord theme token files"
 ### Task 6: `src/styles/main.css` — Tailwind v4 theme + light/dark wiring
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/styles/main-css.test.ts`
 - Create: `packages/ui-kit/src/styles/main.css`
 
 **Interfaces:**
+
 - Consumes: `src/tokens/theme.nord.css` (Task 5)
 - Produces: `--color-surface`, `--color-border`, `--color-accent`, `--color-danger`, `--color-warning`, `--color-success`, `--radius-lg` CSS variables consumed by every composite/primitive component built in Tasks 9–13
 
@@ -668,7 +690,10 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const css = readFileSync(resolve(__dirname, "../../../src/styles/main.css"), "utf-8");
+const css = readFileSync(
+  resolve(__dirname, "../../../src/styles/main.css"),
+  "utf-8",
+);
 
 describe("main.css", () => {
   it("imports tailwindcss and the nord token aggregator", () => {
@@ -678,7 +703,13 @@ describe("main.css", () => {
 
   it("defines a @theme block with the semantic color tokens", () => {
     expect(css).toContain("@theme");
-    for (const token of ["--color-surface", "--color-border", "--color-accent", "--color-danger", "--radius-lg"]) {
+    for (const token of [
+      "--color-surface",
+      "--color-border",
+      "--color-accent",
+      "--color-danger",
+      "--radius-lg",
+    ]) {
       expect(css).toContain(token);
     }
   });
@@ -746,11 +777,13 @@ git commit -m "feat: add tailwind v4 theme and dark/light wiring"
 ### Task 7: `src/lib/utils.ts` — `cn()` helper
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/lib/utils.test.ts`
 - Create: `packages/ui-kit/src/lib/utils.ts`
 - Modify: `packages/ui-kit/src/index.ts`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: `cn(...inputs: ClassValue[]): string` — consumed by every primitive (Task 8) and composite (Tasks 9–13)
 
@@ -770,7 +803,9 @@ describe("cn", () => {
   });
 
   it("drops falsy values", () => {
-    expect(cn("p-2", false && "hidden", undefined, "text-sm")).toBe("p-2 text-sm");
+    expect(cn("p-2", false && "hidden", undefined, "text-sm")).toBe(
+      "p-2 text-sm",
+    );
   });
 });
 ```
@@ -814,11 +849,13 @@ git commit -m "feat: add cn() class-merging utility"
 ### Task 8: `src/primitives/` — shadcn CLI atoms
 
 **Files:**
+
 - Create: `packages/ui-kit/components.json`
 - Create: `packages/ui-kit/src/primitives/button/`, `dialog/`, `tooltip/`, `dropdown-menu/`, `switch/`, `scroll-area/` (each: `<name>.tsx` + `index.ts`)
 - Modify: `packages/ui-kit/src/index.ts`
 
 **Interfaces:**
+
 - Consumes: `src/lib/utils.ts` (Task 7, shadcn-generated components import `cn` from here)
 - Produces: `Button`, `Dialog`+parts, `Tooltip`+parts, `DropdownMenu`+parts, `Switch`, `ScrollArea` — consumed by Phase 3 apps and by this plan's own composites (Tasks 9–13 don't need these directly, but Phase 3 does)
 
@@ -896,12 +933,14 @@ git commit -m "feat: add shadcn/radix primitive atoms"
 ### Task 9: `src/providers/theme-provider/`
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/providers/theme-provider.test.tsx`
 - Create: `packages/ui-kit/src/providers/theme-provider/theme-provider.tsx`
 - Create: `packages/ui-kit/src/providers/theme-provider/index.ts`
 - Modify: `packages/ui-kit/src/index.ts`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: `ThemeProvider`, `useTheme(): { theme: SlateTheme; setTheme: (t: SlateTheme) => void }`, `SlateTheme = "dark" | "light"` — consumed by every Phase 3 app's `src/modules/app/app.tsx`
 
@@ -910,12 +949,18 @@ git commit -m "feat: add shadcn/radix primitive atoms"
 ```tsx
 import { describe, expect, it } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ThemeProvider, useTheme } from "../../../src/providers/theme-provider/theme-provider";
+import {
+  ThemeProvider,
+  useTheme,
+} from "../../../src/providers/theme-provider/theme-provider";
 
 function ThemeConsumer() {
   const { theme, setTheme } = useTheme();
   return (
-    <button type="button" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+    <button
+      type="button"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+    >
       {theme}
     </button>
   );
@@ -946,7 +991,9 @@ describe("ThemeProvider", () => {
       useTheme();
       return null;
     }
-    expect(() => render(<Bare />)).toThrow("useTheme must be used within a ThemeProvider");
+    expect(() => render(<Bare />)).toThrow(
+      "useTheme must be used within a ThemeProvider",
+    );
   });
 });
 ```
@@ -959,7 +1006,14 @@ Expected: FAIL — module not found.
 - [ ] **Step 3: Write `src/providers/theme-provider/theme-provider.tsx`**
 
 ```tsx
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type SlateTheme = "dark" | "light";
 
@@ -975,7 +1029,10 @@ export interface ThemeProviderProps {
   defaultTheme?: SlateTheme;
 }
 
-export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProviderProps) {
+export function ThemeProvider({
+  children,
+  defaultTheme = "dark",
+}: ThemeProviderProps) {
   const [theme, setTheme] = useState<SlateTheme>(defaultTheme);
 
   useEffect(() => {
@@ -984,7 +1041,9 @@ export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProvider
 
   const value = useMemo(() => ({ theme, setTheme }), [theme]);
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
 }
 
 export function useTheme(): ThemeContextValue {
@@ -1025,6 +1084,7 @@ git commit -m "feat: add ThemeProvider"
 ### Task 10: `src/composites/titlebar/` + `window-controls`
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/composites/titlebar.test.tsx`
 - Create: `packages/ui-kit/src/composites/titlebar/window-controls.tsx`
 - Create: `packages/ui-kit/src/composites/titlebar/titlebar.tsx`
@@ -1032,6 +1092,7 @@ git commit -m "feat: add ThemeProvider"
 - Modify: `packages/ui-kit/src/index.ts`
 
 **Interfaces:**
+
 - Consumes: `cn` (Task 7)
 - Produces: `TitleBar({ title, icon?, className? })`, `WindowControls({ className? })` — consumed by Phase 3's `src/modules/app/app.tsx` in every app
 
@@ -1097,13 +1158,25 @@ export function WindowControls({ className }: WindowControlsProps) {
 
   return (
     <div className={cn("flex items-center gap-1", className)}>
-      <button type="button" aria-label="Minimize" onClick={() => appWindow.minimize()}>
+      <button
+        type="button"
+        aria-label="Minimize"
+        onClick={() => appWindow.minimize()}
+      >
         <Minus size={14} />
       </button>
-      <button type="button" aria-label="Maximize" onClick={() => appWindow.toggleMaximize()}>
+      <button
+        type="button"
+        aria-label="Maximize"
+        onClick={() => appWindow.toggleMaximize()}
+      >
         <Square size={12} />
       </button>
-      <button type="button" aria-label="Close" onClick={() => appWindow.close()}>
+      <button
+        type="button"
+        aria-label="Close"
+        onClick={() => appWindow.close()}
+      >
         <X size={14} />
       </button>
     </div>
@@ -1173,12 +1246,14 @@ git commit -m "feat: add TitleBar and WindowControls composites"
 ### Task 11: `src/composites/toolbar/`
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/composites/toolbar.test.tsx`
 - Create: `packages/ui-kit/src/composites/toolbar/toolbar.tsx`
 - Create: `packages/ui-kit/src/composites/toolbar/index.ts`
 - Modify: `packages/ui-kit/src/index.ts`
 
 **Interfaces:**
+
 - Consumes: `cn` (Task 7)
 - Produces: `Toolbar({ children, className? })` — consumed by Phase 3's `src/modules/app/app.tsx` (wraps each app's `src/modules/app-toolbar/`)
 
@@ -1224,7 +1299,9 @@ export interface ToolbarProps {
 
 export function Toolbar({ children, className }: ToolbarProps) {
   return (
-    <footer className={cn("flex h-10 items-center gap-2 border-t px-3", className)}>
+    <footer
+      className={cn("flex h-10 items-center gap-2 border-t px-3", className)}
+    >
       {children}
     </footer>
   );
@@ -1260,12 +1337,14 @@ git commit -m "feat: add Toolbar composite"
 ### Task 12: `src/composites/app-shell/`
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/composites/app-shell.test.tsx`
 - Create: `packages/ui-kit/src/composites/app-shell/app-shell.tsx`
 - Create: `packages/ui-kit/src/composites/app-shell/index.ts`
 - Modify: `packages/ui-kit/src/index.ts`
 
 **Interfaces:**
+
 - Consumes: `cn` (Task 7)
 - Produces: `AppShell({ titleBar, toolbar, children, className? })` — consumed by Phase 3's `src/modules/app/app.tsx` in every app (wraps `TitleBar` + main content + `Toolbar`)
 
@@ -1309,7 +1388,12 @@ export interface AppShellProps {
   className?: string;
 }
 
-export function AppShell({ titleBar, toolbar, children, className }: AppShellProps) {
+export function AppShell({
+  titleBar,
+  toolbar,
+  children,
+  className,
+}: AppShellProps) {
   return (
     <div className={cn("flex h-screen flex-col", className)}>
       {titleBar}
@@ -1349,12 +1433,14 @@ git commit -m "feat: add AppShell composite"
 ### Task 13: `src/composites/context-menu/`
 
 **Files:**
+
 - Create: `packages/ui-kit/tests/unit/composites/context-menu.test.tsx`
 - Create: `packages/ui-kit/src/composites/context-menu/context-menu.tsx`
 - Create: `packages/ui-kit/src/composites/context-menu/index.ts`
 - Modify: `packages/ui-kit/src/index.ts`
 
 **Interfaces:**
+
 - Consumes: `cn` (Task 7), `@radix-ui/react-context-menu` (Task 4 dependency)
 - Produces: `ContextMenu`, `ContextMenuTrigger`, `ContextMenuContent`, `ContextMenuItem` — the base module Phase 3 apps compose/extend per `.cursor/rules/005-ui-kit-boundaries.mdc`, never edited directly by an app
 
@@ -1414,7 +1500,10 @@ export interface ContextMenuContentProps {
   className?: string;
 }
 
-export function ContextMenuContent({ children, className }: ContextMenuContentProps) {
+export function ContextMenuContent({
+  children,
+  className,
+}: ContextMenuContentProps) {
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
@@ -1477,6 +1566,7 @@ git commit -m "feat: add base ContextMenu composite"
 **Files:** none created — verification only
 
 **Interfaces:**
+
 - Consumes: every file created in Tasks 1–13
 - Produces: confirmation Phase 2 is complete and Phase 3 (9 template apps) can build on a real, working `@slate/ui-kit` and `slate-core`
 

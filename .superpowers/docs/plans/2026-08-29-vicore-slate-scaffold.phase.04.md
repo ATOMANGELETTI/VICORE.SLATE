@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 >
-> **Prerequisite:** Phase 3 (`.superpowers/plans/vicore-slate-scaffold/phase.03.md`) must be fully verified before starting this plan — `scripts/package.ts` packages the 9 apps Phase 3 built, and `scripts/new-package.ts`/`new-crate.ts` reuse the template-generation helper Phase 3's `scripts/new-app.ts` introduced.
+> **Prerequisite:** Phase 3 (`.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.03.md`) must be fully verified before starting this plan — `scripts/package.ts` packages the 9 apps Phase 3 built, and `scripts/new-package.ts`/`new-crate.ts` reuse the template-generation helper Phase 3's `scripts/new-app.ts` introduced.
 
 **Goal:** Finish the `scripts/` automation surface (`new-package.ts`, `new-crate.ts`, `dev.ts`, `changelog.ts`, `package.ts`), wire a root `moon run :package` task, and run one final full-graph verification pass across the entire repo — ending with a real `installDir/` produced from at least one built app, proving the whole scaffold from `.cursor/rules/000` through the packaged output works end to end.
 
@@ -1137,7 +1137,7 @@ Run: `bunx changeset version --snapshot dry-run` (or inspect `bunx changeset sta
 
 - [ ] **Step 11: Update this feature's status files**
 
-Overwrite `.superpowers/tasks/vicore-slate-scaffold.md` to reflect all 4 phases verified. Append a final entry to `.superpowers/plans/vicore-slate-scaffold/progress.md` summarizing that the full scaffold is built and verified end to end.
+Check off completed tasks in `.superpowers/docs/tasks/vicore-slate-scaffold.md` (all 54 boxes `[x]` once verification passes) and refresh the full status header (Current phase / Doing now / Model (doing now) / Next / Blocked on) to reflect all 4 phases verified. Do not flip step checkboxes inside phase files. Append a final entry to `.superpowers/docs/progress/vicore-slate-scaffold.md` summarizing that the full scaffold is built and verified end to end.
 
 - [ ] **Step 12: Final commit**
 
