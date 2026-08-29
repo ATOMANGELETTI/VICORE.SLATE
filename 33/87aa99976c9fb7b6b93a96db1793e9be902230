@@ -1,0 +1,32 @@
+scripts/new-crate.ts
+  s_0acef02a8b7c96::t_b59eff9b335735 1-20
+scripts/templates/crate/Cargo.toml
+  s_0acef02a8b7c96::t_fad67c1ba9bb73 1-9
+tests/unit/new-crate.test.ts
+  s_0acef02a8b7c96::t_c3bbfc4d9bae20 1-26
+scripts/templates/crate/src/lib.rs
+  s_0acef02a8b7c96::t_35dfdbda71963d 1-14
+scripts/templates/crate/package.json
+  s_0acef02a8b7c96::t_318193957edd93 1-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "3387aa99976c9fb7b6b93a96db1793e9be902230",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0acef02a8b7c96": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "061733bc-8538-417a-be8d-c712aca70659",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
