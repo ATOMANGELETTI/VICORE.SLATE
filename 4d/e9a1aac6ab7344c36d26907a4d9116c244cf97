@@ -1,0 +1,94 @@
+.cursor/rules/012-agent-model-selection.mdc
+  s_c6628312a1f4d2::t_ff2b859a48ce45 1,3-8
+  h_90ad036e211778 16
+  s_1c9a91017f6b0d::t_e14d325224affe 2,9-15,17-46
+.gitignore
+  s_1cf0ce3a9ce32d::t_6b177848d46da5 8-11
+.superpowers/docs/tasks/agent-model-selection.md
+  s_1cf0ce3a9ce32d::t_0e22342f0a706d 5-11
+  s_1cf0ce3a9ce32d::t_cec1a6e39e995f 2-4
+  s_1cf0ce3a9ce32d::t_309f0936a61b0c 1
+.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.02.md
+  s_1cf0ce3a9ce32d::t_92a2de2065388e 5
+  h_90ad036e211778 27,34,121,130,155,208,259,266,360,371,530,539,582,677,682,695,711,780,786,807,852,858,936,943,954,995,1015,1034,1044,1046,1087,1095,1249,1256,1340,1347,1395,1436,1443,1505,1569
+  s_1cf0ce3a9ce32d::t_85dce83af66774 154,156,207,209,577-581,583,693-694,696,706-710,712,806,808,952-953,955,960-963,994,996,1009-1014,1016,1032-1033,1035,1045,1161-1165,1168-1172,1175-1179,1302-1304,1391-1394,1396,1503-1504,1506
+AGENTS.md
+  s_1cf0ce3a9ce32d::t_b1404e23d598fd 23
+  s_c6628312a1f4d2::t_8b4c526fda20cd 24
+  s_1c9a91017f6b0d::t_0737cfae268670 9
+.superpowers/docs/tasks/vicore-slate-scaffold.md
+  s_1cf0ce3a9ce32d::t_823d78a0698525 11-12,14-76
+  s_1cf0ce3a9ce32d::t_ba7810a1b03c75 3-7,13
+  s_1cf0ce3a9ce32d::t_30511b22faf6f1 1-2
+  s_1cf0ce3a9ce32d::t_64bcdfa8b17d6f 8-10
+.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.01.md
+  s_1cf0ce3a9ce32d::t_146fbdc2c9f1ba 24,28-33,35,40,42,44,47,50,55,59,66,68,70-81,84-85,772,785,794
+  s_1cf0ce3a9ce32d::t_3e2dac88457be3 739
+  s_1cf0ce3a9ce32d::t_ed6b287fdb53f7 17
+  s_1cf0ce3a9ce32d::t_658f6c78f5b537 736-738
+  s_1cf0ce3a9ce32d::t_bb7d3b719fa400 740-742,769-771
+  s_1cf0ce3a9ce32d::t_a7eb4f05b69e41 773-775,782-784
+  s_1cf0ce3a9ce32d::t_596b1648d80221 786-788,791-793
+  s_1cf0ce3a9ce32d::t_4fc8d89e4812e6 795-797
+  s_1cf0ce3a9ce32d::t_908eec0c01c031 727-735,743-768,776-781,789-790,894,897-899
+.superpowers/docs/specs/2026-08-29-agent-model-selection-design.md
+  h_90ad036e211778 49
+  s_1cf0ce3a9ce32d::t_53fc58c49e2f7f 52
+  s_1cf0ce3a9ce32d::t_5552b782982129 53-55
+  s_1cf0ce3a9ce32d::t_0ffc3a160cbfdc 1-48,50-51,56-58
+.superpowers/docs/progress/vicore-slate-scaffold.md
+  s_1cf0ce3a9ce32d::t_3de09d094dc155 4-6
+  s_1cf0ce3a9ce32d::t_193f007537d83e 131-149
+  s_1cf0ce3a9ce32d::t_cb3cf58aad8123 128-130
+  s_1cf0ce3a9ce32d::t_4abd0a294cec4f 11,34,37,40-41,52,60,62,65,69,75-76,87,90,94,101,104,107,111-127
+.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.03.md
+  s_1cf0ce3a9ce32d::t_9ba0e5c35754df 5
+  h_90ad036e211778 27,60,196,198,458,466,495,500,529,532,543,549,560,580,641,647,709,720,839,847,906
+  s_1cf0ce3a9ce32d::t_73f85ce97a54a2 69-74,111-113,177-179,197,306-313,315-318,350-353,457,459,465,467,528,530-531,533,541-542,544,547-548,550,558-559,561,575-579,581,838,840,845-846,848
+.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.04.md
+  s_1cf0ce3a9ce32d::t_3dd80b38127096 1140
+  s_1cf0ce3a9ce32d::t_3ea27aadff300e 5
+.cursor/rules/000-superpowers-plugin-paths.mdc
+  s_1cf0ce3a9ce32d::t_9ffc218fb66241 1-57
+.superpowers/docs/specs/2026-08-29-vicore-slate-scaffold-design.md
+  s_1cf0ce3a9ce32d::t_96771d21e88d98 34,36-39,41
+.cursor/hooks/state/continual-learning.json
+  s_1cf0ce3a9ce32d::t_99bfc52527b724 3-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "4de9a1aac6ab7344c36d26907a4d9116c244cf97",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_1c9a91017f6b0d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "e33814dd-2928-43a9-a88d-7efcb9ee5f18",
+        "model": "default"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_1cf0ce3a9ce32d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4b768cdf-0f79-4978-851a-ff9f5ed1ebe1",
+        "model": "default"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_c6628312a1f4d2": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "dc5de1d4-7566-4ac0-bc9d-feb148b3d4ff",
+        "model": "default"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
