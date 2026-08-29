@@ -1,0 +1,32 @@
+Cargo.toml
+  s_8b80a0239dc3c7::t_19d5cc8d9af9a7 2-3,5
+crates/slate-core/src/lib.rs
+  s_8b80a0239dc3c7::t_8ba10074fa68c6 1-24
+crates/slate-core/Cargo.toml
+  s_8b80a0239dc3c7::t_b7175710d1953f 1-9
+crates/slate-core/package.json
+  s_8b80a0239dc3c7::t_83ed6ba5f751a3 1-5
+Cargo.lock
+  s_8b80a0239dc3c7::t_2727e07a1dffda 1-96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "987261a2ec7a6819271e462d4ee9c83060b999cd",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
