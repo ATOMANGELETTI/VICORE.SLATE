@@ -1,0 +1,593 @@
+scripts/new-app.ts
+  s_0ce40db76ff7ec::t_dda2fb69dbe27b 21-24
+scripts/templates/app/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_a83cc3765a1f6b 1-5,11
+  s_0ce40db76ff7ec::t_65cb816dd835de 6-7,9-10
+  s_0ce40db76ff7ec::t_d6404c3478ae4d 8
+Cargo.toml
+  s_0ce40db76ff7ec::t_79df0f6685ef4e 3
+tsconfig.json
+  s_0ce40db76ff7ec::t_57ae0870b6e1d3 3-14
+scripts/templates/app/.gitignore
+  s_0ce40db76ff7ec::t_e48ed1912617c3 1-2
+scripts/templates/app/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_09dcdb2316f5d8 12,15
+scripts/templates/app/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_97d1b1196ab2b8 22-27
+  s_0ce40db76ff7ec::t_afd533c943003e 28
+scripts/templates/app/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_65e2dd0fe5534b 1-2
+tests/unit/new-app.test.ts
+  s_0ce40db76ff7ec::t_a4e4e4cb2a0d69 38-48
+.moon/workspace.yml
+  s_0ce40db76ff7ec::t_83ea043b4e915f 6-13
+Cargo.lock
+  s_0ce40db76ff7ec::t_513877f7066217 5-2453,2458-4139,4141-4146,4150-4151,4153,4156-4157,4161-4162,4164,4166-4168,4172-4173,4175,4177-4178,4182-4183,4185-4280,4284,4288-4415,4417-4418,4420,4424-4425,4427-4648,4652-4653,4657-4658,4660,4662,4666-4667,4669,4673-4674,4678-4679,4681-4720
+apps/slate-aistudio/.gitignore
+  s_0ce40db76ff7ec::t_f34907f653b6f2 1-2
+apps/slate-aistudio/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_50a1bf4bc562ea 1-11
+apps/slate-aistudio/index.html
+  s_0ce40db76ff7ec::t_9d99d0b00c1537 1-11
+apps/slate-aistudio/isolation/index.html
+  s_0ce40db76ff7ec::t_566cfb7a2657fe 1-9
+apps/slate-aistudio/isolation/index.ts
+  s_0ce40db76ff7ec::t_b7d5686c6dedb4 1-13
+apps/slate-aistudio/package.json
+  s_0ce40db76ff7ec::t_b81a3c65c36f11 1-35
+apps/slate-aistudio/playwright.config.ts
+  s_0ce40db76ff7ec::t_ea59c9cf61ccf7 1-6
+apps/slate-aistudio/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_48d245942e74e9 1-2
+apps/slate-aistudio/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_12cfb58a48f953 1-18
+apps/slate-aistudio/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_c26386af4c23ba 1-3
+apps/slate-aistudio/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_4ae6e9081b96fa 1-7
+apps/slate-aistudio/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_9345e49eddbf26 1-7
+apps/slate-aistudio/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_4c86344bb47790 1-8
+apps/slate-aistudio/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_a444d66302ccec 1-6
+apps/slate-aistudio/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_79457b890aa4aa 1-5
+apps/slate-aistudio/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_2fa0cef9a188cd 1-29
+apps/slate-aistudio/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_51e17cf4063b41 1-3
+apps/slate-aistudio/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_06cf03c6053b72 1-3
+apps/slate-aistudio/src/main.tsx
+  s_0ce40db76ff7ec::t_39a8be714b1368 1-13
+apps/slate-aistudio/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_dd778bbc3d287e 1-3
+apps/slate-aistudio/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_6dd1a3ad3ec504 1
+apps/slate-aistudio/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_1feef31ca78ebf 1-21
+apps/slate-aistudio/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_f13a0e3feeee49 1
+apps/slate-aistudio/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_7dcef301b43a5e 1-6
+apps/slate-aistudio/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_621b0e38386ed1 1
+apps/slate-aistudio/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_7a6a173cfd24e3 1-17
+apps/slate-aistudio/src/styles/main.css
+  s_0ce40db76ff7ec::t_063dc1d7572c39 1-8
+apps/slate-aistudio/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_6764e004d69f85 1-6
+apps/slate-aistudio/tests/setup.ts
+  s_0ce40db76ff7ec::t_a9863ed68a3c2e 1-8
+apps/slate-aistudio/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_4ccc6903d65565 1-15
+apps/slate-aistudio/tsconfig.json
+  s_0ce40db76ff7ec::t_c0598d323e53d8 1-6
+apps/slate-aistudio/vite.config.ts
+  s_0ce40db76ff7ec::t_76dcdf0c4a2b38 1-13
+apps/slate-aistudio/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_4e33630919ad7c 1-6
+apps/slate-aistudio/vitest.config.ts
+  s_0ce40db76ff7ec::t_d307a2e02656c8 1-13
+apps/slate-browser/.gitignore
+  s_0ce40db76ff7ec::t_0b4fe962b84852 1-2
+apps/slate-browser/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_88717d4735cda6 1-11
+apps/slate-browser/index.html
+  s_0ce40db76ff7ec::t_2b98f51f3d6326 1-11
+apps/slate-browser/isolation/index.html
+  s_0ce40db76ff7ec::t_161274a600a878 1-9
+apps/slate-browser/isolation/index.ts
+  s_0ce40db76ff7ec::t_4e8424f4867ab1 1-13
+apps/slate-browser/package.json
+  s_0ce40db76ff7ec::t_68018126a8e567 1-35
+apps/slate-browser/playwright.config.ts
+  s_0ce40db76ff7ec::t_6abfa56403f7f7 1-6
+apps/slate-browser/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_85eefcc487a376 1-2
+apps/slate-browser/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_4be7f270adeab1 1-18
+apps/slate-browser/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_6033dbdfe47abc 1-3
+apps/slate-browser/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_dd2ea129bb22b9 1-7
+apps/slate-browser/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_81809597407767 1-7
+apps/slate-browser/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_57f37475dc6ce7 1-8
+apps/slate-browser/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_d2536275eeb715 1-6
+apps/slate-browser/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_b59cbc118320d4 1-5
+apps/slate-browser/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_90cf6a91b4833b 1-29
+apps/slate-browser/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_32b3c11e21bc36 1-3
+apps/slate-browser/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_3ac02d24cead33 1-3
+apps/slate-browser/src/main.tsx
+  s_0ce40db76ff7ec::t_325bc42470d2bd 1-13
+apps/slate-browser/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_bbac2dd5baa790 1-3
+apps/slate-browser/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_4c79c14fecc3e8 1
+apps/slate-browser/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_611348c5a6380c 1-21
+apps/slate-browser/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_ea0db563ea3352 1
+apps/slate-browser/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_42f60dbd0ae122 1-6
+apps/slate-browser/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_519963f34609cf 1
+apps/slate-browser/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_e96785a0163526 1-17
+apps/slate-browser/src/styles/main.css
+  s_0ce40db76ff7ec::t_d3ba46769deb32 1-8
+apps/slate-browser/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_cdfd82a6f973a2 1-6
+apps/slate-browser/tests/setup.ts
+  s_0ce40db76ff7ec::t_27d4a1ebfe6712 1-8
+apps/slate-browser/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_4accb1af4699ad 1-15
+apps/slate-browser/tsconfig.json
+  s_0ce40db76ff7ec::t_3de24f46ab3e0e 1-6
+apps/slate-browser/vite.config.ts
+  s_0ce40db76ff7ec::t_697000cd1ac8cb 1-13
+apps/slate-browser/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_f1c43c8ec1a8cc 1-6
+apps/slate-browser/vitest.config.ts
+  s_0ce40db76ff7ec::t_dc76c2212dcc17 1-13
+apps/slate-editor/.gitignore
+  s_0ce40db76ff7ec::t_0d5b8532216829 1-2
+apps/slate-editor/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_145823bc3b5bd8 1-11
+apps/slate-editor/index.html
+  s_0ce40db76ff7ec::t_a4918cd5e58d5e 1-11
+apps/slate-editor/isolation/index.html
+  s_0ce40db76ff7ec::t_ffcfc759d53840 1-9
+apps/slate-editor/isolation/index.ts
+  s_0ce40db76ff7ec::t_6c65cfb7bd4bcb 1-13
+apps/slate-editor/package.json
+  s_0ce40db76ff7ec::t_5e82bcbcdc9d06 1-35
+apps/slate-editor/playwright.config.ts
+  s_0ce40db76ff7ec::t_7bc552e4b55c4a 1-6
+apps/slate-editor/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_563e99314d9962 1-2
+apps/slate-editor/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_89c6bee046dc5c 1-18
+apps/slate-editor/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_9f8b3776206c98 1-3
+apps/slate-editor/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_a29cab710db4f8 1-7
+apps/slate-editor/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_f6064f6753b873 1-7
+apps/slate-editor/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_32de1f8f7a4d26 1-8
+apps/slate-editor/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_c1d163ef84471c 1-6
+apps/slate-editor/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_2e7f979f6262b5 1-5
+apps/slate-editor/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_56636eb665eab2 1-29
+apps/slate-editor/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_f7b0bb63dfc6c1 1-3
+apps/slate-editor/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_15ef09a38ce9c2 1-3
+apps/slate-editor/src/main.tsx
+  s_0ce40db76ff7ec::t_309040478cc674 1-13
+apps/slate-editor/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_619738e5e9eb18 1-3
+apps/slate-editor/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_d2c240a01ee988 1
+apps/slate-editor/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_4b789a1713b5d6 1-21
+apps/slate-editor/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_0d34c586421a57 1
+apps/slate-editor/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_d89152eab5cdfc 1-6
+apps/slate-editor/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_7034484311c6b9 1
+apps/slate-editor/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_186db96b7d2145 1-17
+apps/slate-editor/src/styles/main.css
+  s_0ce40db76ff7ec::t_ffb9f072d132ed 1-8
+apps/slate-editor/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_8c412c9d91dcbf 1-6
+apps/slate-editor/tests/setup.ts
+  s_0ce40db76ff7ec::t_e65cdc41e5c5f3 1-8
+apps/slate-editor/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_47ee7d0a88464f 1-15
+apps/slate-editor/tsconfig.json
+  s_0ce40db76ff7ec::t_6aa08732fc5df4 1-6
+apps/slate-editor/vite.config.ts
+  s_0ce40db76ff7ec::t_051a71f5f28c2f 1-13
+apps/slate-editor/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_d7f9c9b0c0ad88 1-6
+apps/slate-editor/vitest.config.ts
+  s_0ce40db76ff7ec::t_b12f360de66b57 1-13
+apps/slate-explorer/.gitignore
+  s_0ce40db76ff7ec::t_c79167aade61d6 1-2
+apps/slate-explorer/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_2b631e2788a0b2 1-11
+apps/slate-explorer/index.html
+  s_0ce40db76ff7ec::t_13a63e4e52441f 1-11
+apps/slate-explorer/isolation/index.html
+  s_0ce40db76ff7ec::t_8b0b2d1e293977 1-9
+apps/slate-explorer/isolation/index.ts
+  s_0ce40db76ff7ec::t_1c25885656b067 1-13
+apps/slate-explorer/package.json
+  s_0ce40db76ff7ec::t_2a9216b26c19f5 1-35
+apps/slate-explorer/playwright.config.ts
+  s_0ce40db76ff7ec::t_7e0b00d067a6db 1-6
+apps/slate-explorer/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_6a934ddbe7a3ca 1-2
+apps/slate-explorer/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_69c60120eb954d 1-18
+apps/slate-explorer/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_069c2fe36f910b 1-3
+apps/slate-explorer/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_0ccae4a3a1bd97 1-7
+apps/slate-explorer/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_b4dc02f7e993bd 1-7
+apps/slate-explorer/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_8ee72677255a1a 1-8
+apps/slate-explorer/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_e80d198641f421 1-6
+apps/slate-explorer/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_103dcf4a7ace08 1-5
+apps/slate-explorer/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_a5100f07ab97e4 1-29
+apps/slate-explorer/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_4e0a0ab9da41d0 1-3
+apps/slate-explorer/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_beef7a63dc6914 1-3
+apps/slate-explorer/src/main.tsx
+  s_0ce40db76ff7ec::t_cc6367abf3d930 1-13
+apps/slate-explorer/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_b52f93e92f5501 1-3
+apps/slate-explorer/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_7a404d9b580d7f 1
+apps/slate-explorer/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_3636521388a146 1-21
+apps/slate-explorer/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_521290f2bca2ea 1
+apps/slate-explorer/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_fb5164c7f21c49 1-6
+apps/slate-explorer/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_2d91805a8e85c4 1
+apps/slate-explorer/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_0482095f3fb479 1-17
+apps/slate-explorer/src/styles/main.css
+  s_0ce40db76ff7ec::t_a90ce2cb6b172e 1-8
+apps/slate-explorer/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_d3560e5cf48d29 1-6
+apps/slate-explorer/tests/setup.ts
+  s_0ce40db76ff7ec::t_42ca2e9ba2a25a 1-8
+apps/slate-explorer/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_1304b7a766fa73 1-15
+apps/slate-explorer/tsconfig.json
+  s_0ce40db76ff7ec::t_c3338c92031f56 1-6
+apps/slate-explorer/vite.config.ts
+  s_0ce40db76ff7ec::t_edab804975c953 1-13
+apps/slate-explorer/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_d95e0b5663922a 1-6
+apps/slate-explorer/vitest.config.ts
+  s_0ce40db76ff7ec::t_bd74c6e1004921 1-13
+apps/slate-gallery/.gitignore
+  s_0ce40db76ff7ec::t_ce2a7b8029b8ca 1-2
+apps/slate-gallery/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_f606cea0c25212 1-11
+apps/slate-gallery/index.html
+  s_0ce40db76ff7ec::t_c8bb2b7893b76a 1-11
+apps/slate-gallery/isolation/index.html
+  s_0ce40db76ff7ec::t_88e6730b78cdde 1-9
+apps/slate-gallery/isolation/index.ts
+  s_0ce40db76ff7ec::t_955d509d3b06f9 1-13
+apps/slate-gallery/package.json
+  s_0ce40db76ff7ec::t_3db1f6586cecee 1-35
+apps/slate-gallery/playwright.config.ts
+  s_0ce40db76ff7ec::t_2c7687c62696d0 1-6
+apps/slate-gallery/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_7b46ec0741e8ab 1-2
+apps/slate-gallery/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_b5f733341e0388 1-18
+apps/slate-gallery/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_c11f3a8e666ad6 1-3
+apps/slate-gallery/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_526835038e305a 1-7
+apps/slate-gallery/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_d605c86a58524f 1-7
+apps/slate-gallery/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_b5b6bc52a4faf3 1-8
+apps/slate-gallery/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_1578353f270b9c 1-6
+apps/slate-gallery/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_43f91241a28755 1-5
+apps/slate-gallery/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_7ff2ae80b8acfc 1-29
+apps/slate-gallery/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_e3a82f593b0929 1-3
+apps/slate-gallery/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_5b2b72f009876e 1-3
+apps/slate-gallery/src/main.tsx
+  s_0ce40db76ff7ec::t_a8ba1d7b7cedf5 1-13
+apps/slate-gallery/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_17e89a5cbc2f4a 1-3
+apps/slate-gallery/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_b698b15d64f631 1
+apps/slate-gallery/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_a4fc2b071fc60f 1-21
+apps/slate-gallery/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_72069a60678a32 1
+apps/slate-gallery/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_749435ba590e89 1-6
+apps/slate-gallery/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_7ce7038bea5707 1
+apps/slate-gallery/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_348507f388f24c 1-17
+apps/slate-gallery/src/styles/main.css
+  s_0ce40db76ff7ec::t_daaf1aac88c492 1-8
+apps/slate-gallery/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_fef9c69a3bb3ae 1-6
+apps/slate-gallery/tests/setup.ts
+  s_0ce40db76ff7ec::t_e21fbed0527ec1 1-8
+apps/slate-gallery/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_a8f4b18ba8ceda 1-15
+apps/slate-gallery/tsconfig.json
+  s_0ce40db76ff7ec::t_bc2934533c4563 1-6
+apps/slate-gallery/vite.config.ts
+  s_0ce40db76ff7ec::t_600d9d7c0faac3 1-13
+apps/slate-gallery/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_36e7321e565c76 1-6
+apps/slate-gallery/vitest.config.ts
+  s_0ce40db76ff7ec::t_8df54fd2ae50d1 1-13
+apps/slate-jukebox/.gitignore
+  s_0ce40db76ff7ec::t_5e5442c24bd1d9 1-2
+apps/slate-jukebox/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_994511ac02d3d5 1-11
+apps/slate-jukebox/index.html
+  s_0ce40db76ff7ec::t_4f02b64db706ea 1-11
+apps/slate-jukebox/isolation/index.html
+  s_0ce40db76ff7ec::t_80c80d2d7ed292 1-9
+apps/slate-jukebox/isolation/index.ts
+  s_0ce40db76ff7ec::t_5af4646c26c923 1-13
+apps/slate-jukebox/package.json
+  s_0ce40db76ff7ec::t_c21d883a54644e 1-35
+apps/slate-jukebox/playwright.config.ts
+  s_0ce40db76ff7ec::t_3c81b411ff6ac1 1-6
+apps/slate-jukebox/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_06f84c1a27deb6 1-2
+apps/slate-jukebox/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_bf367af4f99e79 1-18
+apps/slate-jukebox/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_9c3933bfcea16f 1-3
+apps/slate-jukebox/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_46b041ea655d60 1-7
+apps/slate-jukebox/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_716b11cf9258cd 1-7
+apps/slate-jukebox/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_39febac55796b1 1-8
+apps/slate-jukebox/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_ee49f56629419e 1-6
+apps/slate-jukebox/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_e6e6169216f5ae 1-5
+apps/slate-jukebox/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_50c33640572288 1-29
+apps/slate-jukebox/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_5955806bcc9201 1-3
+apps/slate-jukebox/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_1f82f266d37fec 1-3
+apps/slate-jukebox/src/main.tsx
+  s_0ce40db76ff7ec::t_e89244378ddb72 1-13
+apps/slate-jukebox/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_59f0e58b18c062 1-3
+apps/slate-jukebox/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_c9dd651b0f1aee 1
+apps/slate-jukebox/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_ca03473d163250 1-21
+apps/slate-jukebox/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_06b226c84317e8 1
+apps/slate-jukebox/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_6a2c51d6e95d89 1-6
+apps/slate-jukebox/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_e47bf9a7afaa0a 1
+apps/slate-jukebox/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_0b6b7a5800c29b 1-17
+apps/slate-jukebox/src/styles/main.css
+  s_0ce40db76ff7ec::t_d4f804f76e2599 1-8
+apps/slate-jukebox/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_8b3cc4f7a969c7 1-6
+apps/slate-jukebox/tests/setup.ts
+  s_0ce40db76ff7ec::t_0ee4dfdc98cf94 1-8
+apps/slate-jukebox/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_4ed0c431242406 1-15
+apps/slate-jukebox/tsconfig.json
+  s_0ce40db76ff7ec::t_0d89b67fd97279 1-6
+apps/slate-jukebox/vite.config.ts
+  s_0ce40db76ff7ec::t_b520d3a84ac8ec 1-13
+apps/slate-jukebox/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_fc7202621e2ace 1-6
+apps/slate-jukebox/vitest.config.ts
+  s_0ce40db76ff7ec::t_f4736c03023226 1-13
+apps/slate-player/.gitignore
+  s_0ce40db76ff7ec::t_1c18721b0a107f 1-2
+apps/slate-player/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_fd73a994d0f0c2 1-11
+apps/slate-player/index.html
+  s_0ce40db76ff7ec::t_6005ac5376dadf 1-11
+apps/slate-player/isolation/index.html
+  s_0ce40db76ff7ec::t_2383a725cc2ae0 1-9
+apps/slate-player/isolation/index.ts
+  s_0ce40db76ff7ec::t_5ab72d846bd3fa 1-13
+apps/slate-player/package.json
+  s_0ce40db76ff7ec::t_f2d95f1d7dfd21 1-35
+apps/slate-player/playwright.config.ts
+  s_0ce40db76ff7ec::t_f23ccd32a1636a 1-6
+apps/slate-player/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_57412531acca21 1-2
+apps/slate-player/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_e5830ce718a5e3 1-18
+apps/slate-player/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_b8e709fb07ba2f 1-3
+apps/slate-player/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_b742e67c1ab48c 1-7
+apps/slate-player/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_e65c57599373d6 1-7
+apps/slate-player/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_805004bde99b24 1-8
+apps/slate-player/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_f64b17d8caaf4a 1-6
+apps/slate-player/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_319256dce6d4fb 1-5
+apps/slate-player/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_01b71668f0b66a 1-29
+apps/slate-player/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_41b25c08afaf1e 1-3
+apps/slate-player/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_6cae276a901549 1-3
+apps/slate-player/src/main.tsx
+  s_0ce40db76ff7ec::t_4a4b26d5208f4b 1-13
+apps/slate-player/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_92e00c5690867b 1-3
+apps/slate-player/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_517b250253f25b 1
+apps/slate-player/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_4758e76fb7fa86 1-21
+apps/slate-player/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_73651a7c6f3d00 1
+apps/slate-player/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_a6796c98e3fc8c 1-6
+apps/slate-player/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_ee449f1e478ca3 1
+apps/slate-player/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_6da32c1bd5ed11 1-17
+apps/slate-player/src/styles/main.css
+  s_0ce40db76ff7ec::t_5c2d2c543e471a 1-8
+apps/slate-player/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_f415d10cd45055 1-6
+apps/slate-player/tests/setup.ts
+  s_0ce40db76ff7ec::t_da820b2b45c435 1-8
+apps/slate-player/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_76c3de1c758b8f 1-15
+apps/slate-player/tsconfig.json
+  s_0ce40db76ff7ec::t_56fc7cd69b7869 1-6
+apps/slate-player/vite.config.ts
+  s_0ce40db76ff7ec::t_9c86861230ea23 1-13
+apps/slate-player/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_d775b18cb7d148 1-6
+apps/slate-player/vitest.config.ts
+  s_0ce40db76ff7ec::t_ff0fb2232e000c 1-13
+apps/slate-terminal/.gitignore
+  s_0ce40db76ff7ec::t_bf84e9d214ed11 1-2
+apps/slate-terminal/dist-isolation/index.html
+  s_0ce40db76ff7ec::t_a0f540fa6a149c 1-11
+apps/slate-terminal/index.html
+  s_0ce40db76ff7ec::t_8145f8b8d44b3e 1-11
+apps/slate-terminal/isolation/index.html
+  s_0ce40db76ff7ec::t_1c37eb2e7b3bc9 1-9
+apps/slate-terminal/isolation/index.ts
+  s_0ce40db76ff7ec::t_d9b619e15b5e3f 1-13
+apps/slate-terminal/package.json
+  s_0ce40db76ff7ec::t_1c7b3ba5fa3e11 1-35
+apps/slate-terminal/playwright.config.ts
+  s_0ce40db76ff7ec::t_f0b3562a0d1698 1-6
+apps/slate-terminal/src-tauri/.gitignore
+  s_0ce40db76ff7ec::t_da99718e4c939c 1-2
+apps/slate-terminal/src-tauri/Cargo.toml
+  s_0ce40db76ff7ec::t_9ebface6e31665 1-18
+apps/slate-terminal/src-tauri/build.rs
+  s_0ce40db76ff7ec::t_57bc16a7ac3ffd 1-3
+apps/slate-terminal/src-tauri/capabilities/default.json
+  s_0ce40db76ff7ec::t_d1adbd506827cc 1-7
+apps/slate-terminal/src-tauri/capabilities/desktop.json
+  s_0ce40db76ff7ec::t_c2f33c8f4ce85f 1-7
+apps/slate-terminal/src-tauri/capabilities/remote-tags.json
+  s_0ce40db76ff7ec::t_4aed6127001785 1-8
+apps/slate-terminal/src-tauri/src/lib.rs
+  s_0ce40db76ff7ec::t_4dc4b401f9d19d 1-6
+apps/slate-terminal/src-tauri/src/main.rs
+  s_0ce40db76ff7ec::t_c7bdbd651650ef 1-5
+apps/slate-terminal/src-tauri/tauri.conf.json
+  s_0ce40db76ff7ec::t_2be0bf83f63a3d 1-29
+apps/slate-terminal/src-tauri/tauri.linux.conf.json
+  s_0ce40db76ff7ec::t_309c6ef7767fa7 1-3
+apps/slate-terminal/src-tauri/tauri.windows.conf.json
+  s_0ce40db76ff7ec::t_986e2902ccc6f1 1-3
+apps/slate-terminal/src/main.tsx
+  s_0ce40db76ff7ec::t_675711ec33ea95 1-13
+apps/slate-terminal/src/modules/app-toolbar/app-toolbar.tsx
+  s_0ce40db76ff7ec::t_f38103a6af56c0 1-3
+apps/slate-terminal/src/modules/app-toolbar/index.ts
+  s_0ce40db76ff7ec::t_2eac2c939a9cdc 1
+apps/slate-terminal/src/modules/app/app.tsx
+  s_0ce40db76ff7ec::t_1e21be64e2a13f 1-21
+apps/slate-terminal/src/modules/app/index.ts
+  s_0ce40db76ff7ec::t_47ea457fb9ca7a 1
+apps/slate-terminal/src/modules/app/providers.tsx
+  s_0ce40db76ff7ec::t_b70499cac54340 1-6
+apps/slate-terminal/src/modules/template-view/index.ts
+  s_0ce40db76ff7ec::t_a08f0e9cce6cb3 1
+apps/slate-terminal/src/modules/template-view/template-view.tsx
+  s_0ce40db76ff7ec::t_61e290b923d9d8 1-17
+apps/slate-terminal/src/styles/main.css
+  s_0ce40db76ff7ec::t_c3c679d3708876 1-8
+apps/slate-terminal/tests/e2e/app.spec.ts
+  s_0ce40db76ff7ec::t_b5657a0fd17a21 1-6
+apps/slate-terminal/tests/setup.ts
+  s_0ce40db76ff7ec::t_365446115524d7 1-8
+apps/slate-terminal/tests/unit/modules/template-view/template-view.test.tsx
+  s_0ce40db76ff7ec::t_f0d961f75f03ae 1-15
+apps/slate-terminal/tsconfig.json
+  s_0ce40db76ff7ec::t_3a5649d25f01f3 1-6
+apps/slate-terminal/vite.config.ts
+  s_0ce40db76ff7ec::t_76336a1f5166c8 1-13
+apps/slate-terminal/vite.isolation.config.ts
+  s_0ce40db76ff7ec::t_a56182491716d6 1-6
+apps/slate-terminal/vitest.config.ts
+  s_0ce40db76ff7ec::t_5a937f273aea38 1-13
+bun.lock
+  s_0ce40db76ff7ec::t_2237bdb1e1a983 21-228,634-657,1012-1015,1018-1029
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "66f316051351852df4d0ab6eebf47bc8ecf4b101",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0ce40db76ff7ec": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "088049bc-696b-416d-b65a-fdcb44156295",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
