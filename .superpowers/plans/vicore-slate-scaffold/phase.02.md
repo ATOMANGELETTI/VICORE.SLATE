@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 >
-> **Prerequisite:** Phase 1 (`.superpowers/plans/2026-08-28-phase-1-governance-and-root-foundation.md`) must be fully verified (its Task 27) before starting this plan — this plan's tasks append to files Phase 1 created (root `tsconfig.json`, `Cargo.toml`'s glob-matched members).
+> **Prerequisite:** Phase 1 (`.superpowers/plans/vicore-slate-scaffold/phase.01.md`) must be fully verified (its Task 27) before starting this plan — this plan's tasks append to files Phase 1 created (root `tsconfig.json`, `Cargo.toml`'s glob-matched members).
 
 **Goal:** Build `packages/config-typescript`, `packages/config-vite`, the full `packages/ui-kit` design system (Nord tokens, Tailwind v4 theme, primitives via shadcn/Radix, hand-written composites, ThemeProvider), and the `crates/slate-core` stub — every piece independently unit-tested, so Phase 3's 9 apps have a real, working design system and Rust stub to build on.
 

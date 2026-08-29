@@ -14,59 +14,89 @@
 - Every automation script is Bun-executed TypeScript (`scripts/*.ts`), never `.ps1`/shell-only.
 - Dot-segmented names for multi-axis variant files (e.g. `tauri.windows.conf.json`) — established convention, referenced by rules in this phase, first applied to real files in Phase 2/3.
 - All test code lives under `tests/` — this phase's only real test is for `scripts/sync-crate-versions.ts` (Task 15), which goes in `tests/unit/sync-crate-versions.test.ts`.
-- `.superpowers/{docs,plans,specs,sdd}/` is the only destination for Superpowers-generated artifacts, committed to git (not ignored).
+- `.superpowers/{plans,tasks,reviews,docs}/` is the only destination for Superpowers-generated artifacts, committed to git (not ignored), organized per-feature (`plans/<slug>/` holds that feature's entire design record — spec, phases, progress, optional sdd — `tasks/<slug>.md`, `reviews/<slug>/`); `docs/` stays flat for the rare cross-feature note.
 - No deprecated/legacy tool versions — pin whatever `bun add -D <pkg>@latest` / `cargo add` resolves to at execution time, not a number guessed today.
 
 **Later phases (not covered by this plan):** Phase 2 — Shared Packages (`packages/config-typescript`, `packages/config-vite`, `packages/ui-kit`, `crates/slate-core` stub). Phase 3 — Template Apps x9 (generator-first: `scripts/new-app.ts` + `scripts/templates/app/`, then generate all 9, then hand-patch `slate-launcher`'s tray/isolation extras). Phase 4 — Release Packaging + remaining `scripts/` automation + full-graph verification.
 
 ---
 
-### Task 1: `.superpowers/` directories + the Superpowers path rule
+### Task 1: `.superpowers/` directories (modular, per-feature) + the Superpowers path rule
 
 **Files:**
+
 - Create: `.superpowers/docs/.gitkeep`
-- Create: `.superpowers/plans/.gitkeep`
-- Create: `.superpowers/specs/.gitkeep`
-- Create: `.superpowers/sdd/.gitkeep`
+- Create: `.superpowers/plans/vicore-slate-scaffold/` (already populated by this very plan set — `spec.md`, `phase.01.md`, `phase.02.md`, `phase.03.md`, `phase.04.md`, `progress.md`)
+- Create: `.superpowers/tasks/vicore-slate-scaffold.md` (already created)
+- Create: `.superpowers/reviews/vicore-slate-scaffold/.gitkeep` (already created)
 - Create: `.cursor/rules/000-superpowers-plugin-paths.mdc`
 
 **Interfaces:**
-- Consumes: nothing (first task in the project)
-- Produces: the `.superpowers/` directory tree every later Superpowers skill invocation must write into; the governing redirection rule Task 2's rules assume is active
 
-- [ ] **Step 1: Create the four `.superpowers/` subdirectories with `.gitkeep` placeholders**
+- Consumes: nothing (first task in the project)
+- Produces: the `.superpowers/` directory tree every later Superpowers skill invocation must write into, using a modular one-feature-per-folder convention (matching this project's own `002-monorepo-and-naming.mdc` philosophy); the governing redirection rule every other rule assumes is active
+
+**Note:** this task is largely already done — the `.superpowers/` tree and this very plan set were created directly while writing this plan (see `.superpowers/plans/vicore-slate-scaffold/progress.md`). An earlier pass over-split this into 6 top-level buckets (`docs/plans/specs/sdd/tasks/reviews`), which left `specs/` and `sdd/` sitting empty and redundant with `plans/<slug>/spec.md` — that's been collapsed to the leaner 4-bucket layout below. The step below writes the one file that doesn't yet exist for real: the `.cursor/rules/000-superpowers-plugin-paths.mdc` rule itself. The other steps are included so this task is fully reproducible from scratch for a future feature.
+
+- [ ] **Step 1: Create the top-level `.superpowers/` category directories**
 
 ```bash
-mkdir -p .superpowers/docs .superpowers/plans .superpowers/specs .superpowers/sdd
-touch .superpowers/docs/.gitkeep .superpowers/plans/.gitkeep .superpowers/specs/.gitkeep .superpowers/sdd/.gitkeep
+mkdir -p .superpowers/docs .superpowers/tasks .superpowers/reviews
+touch .superpowers/docs/.gitkeep
 ```
+
+`.superpowers/plans/` doesn't get a `.gitkeep` — it's populated immediately
+below with this feature's real files, and every future feature creates its
+own `plans/<slug>/` subfolder directly (no separate staging bucket).
 
 - [ ] **Step 2: Verify the directories exist**
 
-Run: `Get-ChildItem -Recurse .superpowers | Select-Object FullName`
-Expected: four directories, each containing exactly one `.gitkeep` file (0 bytes).
+Run: `Get-ChildItem -Recurse -Force .superpowers | ForEach-Object { $_.FullName }`
+Expected: `docs/` with one `.gitkeep`; `plans/vicore-slate-scaffold/` with `spec.md`, `phase.01.md`–`phase.04.md`, `progress.md`; `tasks/vicore-slate-scaffold.md`; `reviews/vicore-slate-scaffold/.gitkeep`. No top-level `specs/` or `sdd/`.
 
 - [ ] **Step 3: Write `.cursor/rules/000-superpowers-plugin-paths.mdc`**
 
 ```markdown
 ---
-description: Redirect all Superpowers plugin artifacts into .superpowers/
+description: Redirect all Superpowers plugin artifacts into .superpowers/, organized per-feature
 alwaysApply: true
 ---
 
 # Superpowers Artifact Redirection
 
 Whenever any Superpowers skill (brainstorming, writing-plans, executing-plans,
-subagent-driven-development, spec-driven-development, etc.) would write a
-design spec, implementation plan, doc, or other autogenerated artifact to its
-own default location, write it instead under this repo's `.superpowers/`
-directory, keeping the skill's normal filename/date-stamp convention — only
-the base directory changes:
+subagent-driven-development, spec-driven-development, requesting/receiving
+code review, etc.) would write a design spec, implementation plan,
+task-status file, progress report, code-review artifact, or other
+autogenerated artifact to its own default location, write it instead under
+this repo's `.superpowers/` directory, using the modular
+one-feature-per-folder convention (matching `002-monorepo-and-naming.mdc`).
+There are exactly four top-level buckets — do not add more without updating
+this rule:
 
-- Design specs (brainstorming) -> `.superpowers/specs/YYYY-MM-DD-<topic>-design.md`
-- Implementation plans (writing-plans) -> `.superpowers/plans/YYYY-MM-DD-<feature-name>.md`
-- General docs -> `.superpowers/docs/`
-- Spec-driven-development artifacts -> `.superpowers/sdd/`
+- `.superpowers/plans/<feature-slug>/` — the entire per-feature design
+  record, created as soon as brainstorming starts on that feature (not
+  staged elsewhere first). Contains `spec.md` (the design spec), dot-segmented
+  `phase.01.md`, `phase.02.md`, ... (one file per phase/sub-plan, added once
+  `writing-plans` runs), `progress.md` (a full, detailed, append-only report
+  of what has been done, what's in flight, and what's next), and an optional
+  `sdd/` subfolder for spec-driven-development artifacts if that workflow is
+  used for this feature — nothing about one feature is ever split across
+  multiple top-level buckets.
+- `.superpowers/tasks/<feature-slug>.md` — one simple, single-file status
+  tracker per feature: current phase/task, what the agent is doing right
+  now, what's next. Kept short — a glanceable dashboard, overwritten in
+  place (not appended); `progress.md` is where the detailed history lives.
+- `.superpowers/reviews/<feature-slug>/` — requesting-code-review /
+  receiving-code-review skill output for that feature.
+- `.superpowers/docs/` — general notes/docs not tied to any one feature.
+  This should stay small and rare; anything tied to a specific feature goes
+  in that feature's own `plans/<feature-slug>/` folder instead, never here.
+
+`<feature-slug>` is a kebab-case slug shared across every bucket for the
+same piece of work (e.g. `vicore-slate-scaffold`), so `plans/<slug>/`,
+`tasks/<slug>.md`, and `reviews/<slug>/` all line up and a feature's full
+history is findable from any one of them.
 
 `.superpowers/` is committed to git (it is real project design history),
 unlike the personal `.devlog/` folder which stays git/cursorignored. This
@@ -79,11 +109,15 @@ deleted or disabled.
 Run: `Get-Content .cursor/rules/000-superpowers-plugin-paths.mdc | Select-Object -First 4`
 Expected: the three `---`-delimited frontmatter lines print first, with `alwaysApply: true` present.
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 5: Update this feature's task-status file to reflect Phase 1 execution starting**
+
+Overwrite `.superpowers/tasks/vicore-slate-scaffold.md`'s "Current phase"/"Doing now" lines to say execution of `phase.01.md` has begun (in place — this file is always overwritten, never appended).
+
+- [ ] **Step 6: Commit**
 
 ```bash
 git add .superpowers/ .cursor/rules/000-superpowers-plugin-paths.mdc
-git commit -m "chore: redirect superpowers artifacts into .superpowers/"
+git commit -m "chore: redirect superpowers artifacts into .superpowers/, modular per-feature"
 ```
 
 ---
@@ -91,9 +125,11 @@ git commit -m "chore: redirect superpowers artifacts into .superpowers/"
 ### Task 2: `.cursor/rules/001-project-overview.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/001-project-overview.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the always-loaded project vision statement every other rule and every future agent session references
 
@@ -153,9 +189,11 @@ git commit -m "docs: add project overview rule"
 ### Task 3: `.cursor/rules/002-monorepo-and-naming.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/002-monorepo-and-naming.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the naming convention every Phase 2/3 file path in this plan set must follow
 
@@ -221,9 +259,11 @@ git commit -m "docs: add monorepo and naming conventions rule"
 ### Task 4: `.cursor/rules/003-rust-tauri-guidelines.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/003-rust-tauri-guidelines.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the Rust/Tauri guardrails Phase 3 app scaffolding must follow
 
@@ -245,7 +285,7 @@ alwaysApply: false
 - Every app wires Tauri v2's **Isolation Pattern**: `isolation/` secure-bridge
   webview, `vite.isolation.config.ts` building it to `dist-isolation/`,
   `tauri.conf.json` -> `app.security.pattern = { "use": "isolation", "options":
-  { "dir": "../dist-isolation" } }`. The bridge script is a pass-through stub
+{ "dir": "../dist-isolation" } }`. The bridge script is a pass-through stub
   until real validation logic is needed (see `009-portability-and-deferred-scope.mdc`).
 - Capabilities are granular files under `src-tauri/capabilities/`:
   `default.json` (core + window, every app), `desktop.json` (OS integration,
@@ -274,9 +314,11 @@ git commit -m "docs: add rust and tauri guidelines rule"
 ### Task 5: `.cursor/rules/004-typescript-react-guidelines.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/004-typescript-react-guidelines.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the TS/React guardrails every Phase 2/3 `.ts`/`.tsx` file must follow
 
@@ -322,9 +364,11 @@ git commit -m "docs: add typescript and react guidelines rule"
 ### Task 6: `.cursor/rules/005-ui-kit-boundaries.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/005-ui-kit-boundaries.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the boundary rule Phase 2's `packages/ui-kit` work and every Phase 3 app must respect
 
@@ -342,7 +386,7 @@ alwaysApply: false
 **`packages/ui-kit` only holds what 2+ apps need identically** — buttons,
 dialogs, the window chrome (titlebar/window-controls/toolbar/app-shell), the
 base context-menu module. Anything app-specific — even a context menu with
-one extra item — is built *in that app's own* `src/modules/`, optionally
+one extra item — is built _in that app's own_ `src/modules/`, optionally
 composing the ui-kit base module rather than duplicating it.
 
 - `src/primitives/<name>/` — atoms (shadcn/Radix-based single-purpose
@@ -373,15 +417,17 @@ git commit -m "docs: add ui-kit boundaries rule"
 ### Task 7: `.cursor/rules/006-app-shell-window-chrome.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/006-app-shell-window-chrome.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the per-app shell composition pattern Phase 3 must follow
 
 - [ ] **Step 1: Write the rule**
 
-```markdown
+````markdown
 ---
 description: App shell and window chrome composition pattern
 globs: ["apps/*/src/**"]
@@ -399,17 +445,19 @@ Every app's `src/modules/app/app.tsx` composes the same shape:
   </AppShell>
 </ThemeProvider>
 ```
+````
 
 - `ThemeProvider`, `AppShell`, `TitleBar`, `WindowControls`, `Toolbar` come
   from `@slate/ui-kit`'s `src/composites/`.
-- Only the toolbar's *contents* (`src/modules/app-toolbar/`) and the
+- Only the toolbar's _contents_ (`src/modules/app-toolbar/`) and the
   app's main content (`src/modules/template-view/`, later replaced by real
   app UI) are app-local.
 - `tauri.conf.json` sets `decorations: false` — the custom titlebar replaces
   the OS one on every platform.
 - Version numbers are always fetched live via
   `@tauri-apps/api/app` `getVersion()`, never hardcoded.
-```
+
+````
 
 - [ ] **Step 2: Verify it parses**
 
@@ -421,16 +469,18 @@ Expected: frontmatter with `globs` array present.
 ```bash
 git add .cursor/rules/006-app-shell-window-chrome.mdc
 git commit -m "docs: add app shell and window chrome rule"
-```
+````
 
 ---
 
 ### Task 8: `.cursor/rules/007-nord-theming.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/007-nord-theming.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the exact Nord token spec Phase 2's `packages/ui-kit/src/tokens/` must implement
 
@@ -486,9 +536,11 @@ git commit -m "docs: add nord theming rule"
 ### Task 9: `.cursor/rules/008-testing-strategy.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/008-testing-strategy.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the testing-location rule every phase's tasks (including this plan's own Task 15) must follow
 
@@ -536,9 +588,11 @@ git commit -m "docs: add testing strategy rule"
 ### Task 10: `.cursor/rules/009-portability-and-deferred-scope.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/009-portability-and-deferred-scope.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the deferred-scope list agents must consult before inventing new crates/features
 
@@ -557,8 +611,8 @@ to implement something in this list, stop and confirm scope with the user
 first rather than building it speculatively:
 
 - `crates/slate-runtime` — real portable-path resolution + Tauri plugin
-  wrapper. The *static* `installDir/` packaging layout and `scripts/package.ts`
-  that produce it ARE in scope (Phase 4) — it's apps *reading* their data
+  wrapper. The _static_ `installDir/` packaging layout and `scripts/package.ts`
+  that produce it ARE in scope (Phase 4) — it's apps _reading_ their data
   from those relative paths at runtime that needs this crate.
 - Per-profile folder creation under `storage/<profile>/` at first run —
   needs `slate-runtime`; only the empty `storage/` root is created at
@@ -592,9 +646,11 @@ git commit -m "docs: add deferred scope rule"
 ### Task 11: `.cursor/rules/010-git-commit-workflow.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/010-git-commit-workflow.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the commit/versioning rule Task 13 (Husky+Commitlint) and Task 14 (Changesets) implement
 
@@ -611,7 +667,7 @@ alwaysApply: true
 - Conventional Commits, enforced by Commitlint (`commitlint.config.ts`) on
   `commit-msg` via Husky.
 - `pre-commit` runs `bunx lint-staged` (Biome on staged JS/TS, `cargo fmt
-  --check` on staged Rust).
+--check` on staged Rust).
 - `pre-push` runs `moon run :test --affected`.
 - Every user-facing change that bumps a version adds a changeset
   (`bunx changeset`) — Changesets tracks apps, packages, **and** Rust
@@ -645,9 +701,11 @@ git commit -m "docs: add git commit workflow rule"
 ### Task 12: `.cursor/rules/011-release-packaging-layout.mdc`
 
 **Files:**
+
 - Create: `.cursor/rules/011-release-packaging-layout.mdc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the packaging contract Phase 4's `scripts/package.ts` implements
 
@@ -665,19 +723,20 @@ globs: ["scripts/**"]
 `scripts/package.ts` (Phase 4) assembles this exact `installDir/` tree from
 build outputs — the dev-time monorepo layout and packaged layout are
 intentionally different:
-
 ```
+
 installDir/
-├── launcher/                    # built slate-launcher (top-level, not under programs/)
+├── launcher/ # built slate-launcher (top-level, not under programs/)
 ├── programs/
-│   ├── slate-terminal/ ... slate-aistudio/   # every other app, same slate-* name
+│ ├── slate-terminal/ ... slate-aistudio/ # every other app, same slate-\* name
 ├── appdata/
-│   ├── configs/settings.toml
-│   ├── database/                 # empty at package time
-│   ├── logs/                     # empty at package time
-│   ├── docs/{README.md,LICENSE.md,CHANGELOG.md}
-│   └── resources/{fonts/,icons/}  # copied from packages/ui-kit/src/assets/
-└── storage/                      # empty at package time; per-profile dirs are runtime (deferred)
+│ ├── configs/settings.toml
+│ ├── database/ # empty at package time
+│ ├── logs/ # empty at package time
+│ ├── docs/{README.md,LICENSE.md,CHANGELOG.md}
+│ └── resources/{fonts/,icons/} # copied from packages/ui-kit/src/assets/
+└── storage/ # empty at package time; per-profile dirs are runtime (deferred)
+
 ```
 
 - No renaming: `apps/slate-terminal` -> `programs/slate-terminal/`, never
@@ -703,11 +762,13 @@ git commit -m "docs: add release packaging layout rule"
 ### Task 13: `.cursor/commands/{new-app,new-package,new-crate}.md`
 
 **Files:**
+
 - Create: `.cursor/commands/new-app.md`
 - Create: `.cursor/commands/new-package.md`
 - Create: `.cursor/commands/new-crate.md`
 
 **Interfaces:**
+
 - Consumes: nothing (the scripts these commands reference are built in Phase 2/3, not this phase)
 - Produces: the thin agent-facing entry points that will call `scripts/new-app.ts`/`new-package.ts`/`new-crate.ts`
 
@@ -768,10 +829,12 @@ git commit -m "docs: add scaffolding command entry points"
 ### Task 14: `AGENTS.md` canonical brief + `.cursorrules` pointer (no `CLAUDE.md`)
 
 **Files:**
+
 - Modify: `AGENTS.md` (already has auto-generated "Learned User Preferences"/"Learned Workspace Facts" sections from the continual-learning subagent — prepend a new top section, keep those sections below it unchanged)
 - Create: `.cursorrules`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the canonical brief every rule file above already assumes exists at `AGENTS.md`
 
@@ -822,10 +885,12 @@ git commit -m "docs: add canonical project brief to AGENTS.md and .cursorrules p
 ### Task 15: `scripts/sync-crate-versions.ts` (TDD — first real code in the repo)
 
 **Files:**
+
 - Create: `tests/unit/sync-crate-versions.test.ts`
 - Create: `scripts/sync-crate-versions.ts`
 
 **Interfaces:**
+
 - Consumes: nothing (first code in the repo)
 - Produces: `syncCrateVersion(crateDir: string): void` — reads `<crateDir>/package.json`'s `version`, writes it into `<crateDir>/Cargo.toml`'s `version = "..."` line. Phase 4's `bun run version` script and Phase 2's crate scaffolding both depend on this exact function signature.
 
@@ -936,11 +1001,13 @@ git commit -m "feat: add crate version sync script for changesets"
 ### Task 16: Root `package.json` + `bunfig.toml` (delete stray `.bunfig.toml`)
 
 **Files:**
+
 - Create: `package.json`
 - Delete: `.bunfig.toml`
 - Create: `bunfig.toml`
 
 **Interfaces:**
+
 - Consumes: `scripts/sync-crate-versions.ts` (Task 15, referenced by the `version` script)
 - Produces: the Bun workspace root every later phase's `apps/*/package.json` and `packages/*/package.json` joins
 
@@ -1023,10 +1090,12 @@ git commit -m "chore: add root package.json and fix bunfig.toml naming"
 ### Task 17: `.tool-versions` (mise) + `rust-toolchain.toml`
 
 **Files:**
+
 - Create: `.tool-versions`
 - Create: `rust-toolchain.toml`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the pinned toolchain versions Task 18 (`.moon/toolchains.yml`) and Task 24 (CI) must mirror exactly
 
@@ -1076,9 +1145,11 @@ git commit -m "chore: pin toolchain versions via mise and rust-toolchain.toml"
 ### Task 18: Cargo workspace (`Cargo.toml`)
 
 **Files:**
+
 - Create: `Cargo.toml`
 
 **Interfaces:**
+
 - Consumes: `rust-toolchain.toml` (Task 17)
 - Produces: the workspace `crates/*` and `apps/*/src-tauri` join in Phase 2/3, and the `[workspace.dependencies]` block they inherit from via `dep.workspace = true`
 
@@ -1118,12 +1189,14 @@ git commit -m "chore: add root cargo workspace"
 ### Task 19: moon v2 config (`.moon/workspace.yml`, `.moon/toolchains.yml`, `.moon/tasks/common.yml`; delete stray root `moon.yml`)
 
 **Files:**
+
 - Create: `.moon/workspace.yml`
 - Create: `.moon/toolchains.yml`
 - Create: `.moon/tasks/common.yml`
 - Delete: `moon.yml` (root — not a real moon v2 file)
 
 **Interfaces:**
+
 - Consumes: `.tool-versions` (Task 17, versions must match)
 - Produces: the `moon run :lint :typecheck :test :build` tasks every later phase's verification step calls
 
@@ -1199,9 +1272,11 @@ git commit -m "chore: add moon v2 workspace config, remove stray root moon.yml"
 ### Task 20: Biome (`biome.jsonc`)
 
 **Files:**
+
 - Create: `biome.jsonc`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the single lint+format config every `.ts`/`.tsx`/`.json`/`.css` file in every later phase is checked against
 
@@ -1212,18 +1287,25 @@ git commit -m "chore: add moon v2 workspace config, remove stray root moon.yml"
   "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": { "ignoreUnknown": false },
-  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+  },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "suspicious": { "noExplicitAny": "error" },
-      "correctness": { "noUnusedVariables": "error" }
-    }
+      "correctness": { "noUnusedVariables": "error" },
+    },
   },
-  "javascript": { "formatter": { "quoteStyle": "double", "semicolons": "always" } },
+  "javascript": {
+    "formatter": { "quoteStyle": "double", "semicolons": "always" },
+  },
   "json": { "formatter": { "enabled": true } },
-  "css": { "formatter": { "enabled": true }, "linter": { "enabled": true } }
+  "css": { "formatter": { "enabled": true }, "linter": { "enabled": true } },
 }
 ```
 
@@ -1244,11 +1326,13 @@ git commit -m "chore: add biome config"
 ### Task 21: Rust lint/format/deny (`rustfmt.toml`, `clippy.toml`, `deny.toml`)
 
 **Files:**
+
 - Create: `rustfmt.toml`
 - Create: `clippy.toml`
 - Create: `deny.toml`
 
 **Interfaces:**
+
 - Consumes: `Cargo.toml` (Task 18)
 - Produces: the Rust format/lint/advisory policy every crate/app's `src-tauri` inherits
 
@@ -1308,10 +1392,12 @@ git commit -m "chore: add rust format, clippy, and deny configs"
 ### Task 22: Mutation testing + coverage (`cargo-mutants.toml`, `tarpaulin.toml`)
 
 **Files:**
+
 - Create: `cargo-mutants.toml`
 - Create: `tarpaulin.toml`
 
 **Interfaces:**
+
 - Consumes: `Cargo.toml` (Task 18)
 - Produces: the coverage/mutation config Phase 4's verification pass runs against real crate code
 
@@ -1353,10 +1439,12 @@ git commit -m "chore: add mutation testing and coverage configs"
 ### Task 23: Root TypeScript project references + Vitest workspace
 
 **Files:**
+
 - Create: `tsconfig.json`
 - Create: `vitest.workspace.ts`
 
 **Interfaces:**
+
 - Consumes: nothing
 - Produces: the solution-style root Phase 2/3 append their own `apps/*/tsconfig.json`/`packages/*/tsconfig.json` entries into
 
@@ -1404,12 +1492,14 @@ git commit -m "chore: add root tsconfig project references and vitest workspace"
 ### Task 24: Husky + Commitlint
 
 **Files:**
+
 - Modify: `.husky/pre-commit`
 - Modify: `.husky/commit-msg`
 - Modify: `.husky/pre-push`
 - Create: `commitlint.config.ts`
 
 **Interfaces:**
+
 - Consumes: `package.json` (Task 16, for `bunx`/`moon` invocations), `.moon/tasks/common.yml` (Task 19, for the `:test` task)
 - Produces: the enforced commit-message format every task's own "Commit" steps in this plan (and all future plans) must satisfy
 
@@ -1470,10 +1560,12 @@ git commit -m "chore: wire husky hooks and commitlint"
 ### Task 25: Changesets (`.changeset/config.json`, `.changeset/README.md`)
 
 **Files:**
+
 - Modify: `.changeset/config.json`
 - Modify: `.changeset/README.md`
 
 **Interfaces:**
+
 - Consumes: `package.json` (Task 16, `changeset`/`version` scripts), `scripts/sync-crate-versions.ts` (Task 15)
 - Produces: the internal versioning source of truth Phase 2's crate `package.json` tracking files and Phase 4's `CHANGELOG.md` aggregation depend on
 
@@ -1524,11 +1616,13 @@ git commit -m "chore: configure changesets for internal version tracking"
 ### Task 26: CI workflow (`.github/workflows/ci.yml`)
 
 **Files:**
+
 - Create: `.github/workflows/ci.yml`
 - Create: `scripts/check-toolchain-versions.ts`
 - Create: `tests/unit/check-toolchain-versions.test.ts`
 
 **Interfaces:**
+
 - Consumes: `.tool-versions` (Task 17), `.moon/toolchains.yml` (Task 19), `rust-toolchain.toml` (Task 17)
 - Produces: `parseToolVersions(content: string): Record<string, string>` and `checkDrift(toolVersions: Record<string, string>, moonToolchains: Record<string, string>): string[]` — Phase 4's full verification pass runs this same script
 
@@ -1536,7 +1630,10 @@ git commit -m "chore: configure changesets for internal version tracking"
 
 ```typescript
 import { describe, expect, it } from "bun:test";
-import { checkDrift, parseToolVersions } from "../../scripts/check-toolchain-versions";
+import {
+  checkDrift,
+  parseToolVersions,
+} from "../../scripts/check-toolchain-versions";
 
 describe("parseToolVersions", () => {
   it("parses mise .tool-versions format", () => {
@@ -1547,13 +1644,21 @@ describe("parseToolVersions", () => {
 
 describe("checkDrift", () => {
   it("returns no errors when versions match", () => {
-    const errors = checkDrift({ bun: "1.4.0", rust: "1.90.0" }, { bun: "1.4.0", rust: "1.90.0" });
+    const errors = checkDrift(
+      { bun: "1.4.0", rust: "1.90.0" },
+      { bun: "1.4.0", rust: "1.90.0" },
+    );
     expect(errors).toEqual([]);
   });
 
   it("reports a drifted tool by name", () => {
-    const errors = checkDrift({ bun: "1.4.0", rust: "1.90.0" }, { bun: "1.4.0", rust: "1.89.0" });
-    expect(errors).toEqual(["rust: .tool-versions has 1.90.0 but .moon/toolchains.yml has 1.89.0"]);
+    const errors = checkDrift(
+      { bun: "1.4.0", rust: "1.90.0" },
+      { bun: "1.4.0", rust: "1.89.0" },
+    );
+    expect(errors).toEqual([
+      "rust: .tool-versions has 1.90.0 but .moon/toolchains.yml has 1.89.0",
+    ]);
   });
 });
 ```
@@ -1595,11 +1700,12 @@ export function checkDrift(
 }
 
 if (import.meta.main) {
-  const toolVersions = parseToolVersions(readFileSync(".tool-versions", "utf-8"));
-  const toolchains = parseYaml(readFileSync(".moon/toolchains.yml", "utf-8")) as Record<
-    string,
-    { version: string }
-  >;
+  const toolVersions = parseToolVersions(
+    readFileSync(".tool-versions", "utf-8"),
+  );
+  const toolchains = parseYaml(
+    readFileSync(".moon/toolchains.yml", "utf-8"),
+  ) as Record<string, { version: string }>;
   const moonToolchains = Object.fromEntries(
     Object.entries(toolchains).map(([k, v]) => [k, v.version]),
   );
@@ -1671,6 +1777,7 @@ git commit -m "feat: add CI workflow and toolchain drift check"
 **Files:** none created — verification only
 
 **Interfaces:**
+
 - Consumes: every file created in Tasks 1–26
 - Produces: confirmation Phase 1 is complete and Phase 2 can start from a clean, lint-passing, zero-drift foundation
 
