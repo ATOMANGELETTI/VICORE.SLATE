@@ -1,0 +1,21 @@
+.superpowers/tasks/vicore-slate-scaffold.md
+  s_6bc42661d68e01::t_631ed4cafbe557 3-12,14-16
+.superpowers/plans/vicore-slate-scaffold/progress.md
+  s_6bc42661d68e01::t_d9774afa405005 128-174
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "9778a7905a37a8863e34db8891571b4c79904bea",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
