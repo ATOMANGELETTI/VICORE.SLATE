@@ -1,0 +1,21 @@
+scripts/sync-crate-versions.ts
+  s_86c53051830dcc::t_e6dad6ee87415e 1-34
+tests/unit/sync-crate-versions.test.ts
+  s_86c53051830dcc::t_34cecf38cd4ca0 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "35646fc8ac96cd04574c867e6333d1df86035763",
+  "prompts": {},
+  "sessions": {
+    "s_86c53051830dcc": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8b77b565-36da-4d13-8ac2-d89f618e377b",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
