@@ -1,0 +1,34 @@
+packages/ui-kit/src/tokens/theme.nord.frost.css
+  s_8b80a0239dc3c7::t_bcded52ee2c53e 1-6
+packages/ui-kit/src/tokens/theme.nord.polar-night.css
+  s_8b80a0239dc3c7::t_66995dd3b0bd71 1-6
+packages/ui-kit/tests/unit/tokens/nord-tokens.test.ts
+  s_8b80a0239dc3c7::t_8c430fd6695e3e 1-48
+packages/ui-kit/src/tokens/theme.nord.snow-storm.css
+  s_8b80a0239dc3c7::t_25f67477289b84 1-5
+packages/ui-kit/src/tokens/theme.nord.aurora.css
+  s_8b80a0239dc3c7::t_e9992150502378 1-7
+packages/ui-kit/src/tokens/theme.nord.css
+  s_8b80a0239dc3c7::t_54fe826bd94555 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "534f8f2b08b8f28d7b6a7696c5813dc798bd4050",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
