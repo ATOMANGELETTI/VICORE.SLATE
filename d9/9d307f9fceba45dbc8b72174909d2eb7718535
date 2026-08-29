@@ -1,0 +1,28 @@
+tests/unit/changelog.test.ts
+  s_0acef02a8b7c96::t_8a7f7e119a365b 1-46
+scripts/changelog.ts
+  s_0acef02a8b7c96::t_6774c684012015 1-52
+scripts/templates/appdata/configs/settings.toml
+  s_0acef02a8b7c96::t_8bbeecdceb0806 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "d99d307f9fceba45dbc8b72174909d2eb7718535",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0acef02a8b7c96": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "061733bc-8538-417a-be8d-c712aca70659",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
