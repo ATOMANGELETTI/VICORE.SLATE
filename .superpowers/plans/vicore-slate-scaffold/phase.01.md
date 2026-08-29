@@ -74,15 +74,14 @@ one-feature-per-folder convention (matching `002-monorepo-and-naming.mdc`).
 There are exactly four top-level buckets — do not add more without updating
 this rule:
 
-- `.superpowers/plans/<feature-slug>/` — the entire per-feature design
+- `.superpowers/plans/<feature-slug>/` — the entire per-feature **design**
   record, created as soon as brainstorming starts on that feature (not
   staged elsewhere first). Contains `spec.md` (the design spec), dot-segmented
   `phase.01.md`, `phase.02.md`, ... (one file per phase/sub-plan, added once
-  `writing-plans` runs), `progress.md` (a full, detailed, append-only report
-  of what has been done, what's in flight, and what's next), and an optional
-  `sdd/` subfolder for spec-driven-development artifacts if that workflow is
-  used for this feature — nothing about one feature is ever split across
-  multiple top-level buckets.
+  `writing-plans` runs), and `progress.md` (a full, detailed, append-only
+  report of what has been done, what's in flight, and what's next) —
+  nothing about one feature's design record is ever split across multiple
+  top-level buckets.
 - `.superpowers/tasks/<feature-slug>.md` — one simple, single-file status
   tracker per feature: current phase/task, what the agent is doing right
   now, what's next. Kept short — a glanceable dashboard, overwritten in
@@ -92,6 +91,13 @@ this rule:
 - `.superpowers/docs/` — general notes/docs not tied to any one feature.
   This should stay small and rare; anything tied to a specific feature goes
   in that feature's own `plans/<feature-slug>/` folder instead, never here.
+- `.superpowers/sdd/` — **not** part of the four design buckets above.
+  This one is a flat, git-ignored **scratch** workspace that the
+  subagent-driven-development skill's own tooling creates and manages
+  (task briefs, implementer reports, review-package diffs, its own
+  progress ledger). Never hand-create files there and never commit
+  anything from it — the skill's `sdd-workspace` script writes a
+  self-ignoring `.gitignore` into it the first time it runs.
 
 `<feature-slug>` is a kebab-case slug shared across every bucket for the
 same piece of work (e.g. `vicore-slate-scaffold`), so `plans/<slug>/`,
