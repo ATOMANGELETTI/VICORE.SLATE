@@ -1,0 +1,37 @@
+Cargo.toml
+  s_c777f09b2212d1::t_2d131f27011316 2-4,6
+.husky/pre-commit
+  s_c777f09b2212d1::t_a67e8df8787881 2
+tests/unit/cargo-fmt-check.test.ts
+  s_c777f09b2212d1::t_a36d87e9516d43 1-17,19-56,63-69
+  s_c777f09b2212d1::t_6ddfde3e68623d 57-61
+  s_c777f09b2212d1::t_530b244b0e05b2 18
+  s_c777f09b2212d1::t_e7c237c8ecdc4c 62
+scripts/cargo-fmt-check.ts
+  s_c777f09b2212d1::t_ed50112f48a55e 1-42
+.gitignore
+  s_c777f09b2212d1::t_b764a07d4c0c58 8-20
+tests/unit/sync-crate-versions.test.ts
+  s_c777f09b2212d1::t_b46ceb05a3062f 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "d1186ec6019918ac04c7da54236e682ff2eb73ed",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_c777f09b2212d1": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "14b07ec1-b90a-40e0-8c21-47a1ea41ae93",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
