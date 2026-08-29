@@ -1,0 +1,26 @@
+AGENTS.md
+  s_ab500b73683855::t_02484ad21eba80 1-24
+.cursor/hooks/state/continual-learning-index.json
+  s_ab500b73683855::t_eb1c46ebd61431 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "fa9c84788007a122203427ba47d71e273b626396",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_ab500b73683855": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "6cc7972f-7be1-4b34-ba1b-f4c513ab8e5f",
+        "model": "claude-sonnet-5-thinking-high"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
