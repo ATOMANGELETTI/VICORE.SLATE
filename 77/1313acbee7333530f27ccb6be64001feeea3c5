@@ -1,0 +1,23 @@
+clippy.toml
+  s_aab0917834f4b0::t_8365d5c2cb6e80 1-2
+deny.toml
+  s_aab0917834f4b0::t_7c1def1f1458f2 1-18
+rustfmt.toml
+  s_aab0917834f4b0::t_4ffa07cfa96553 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "771313acbee7333530f27ccb6be64001feeea3c5",
+  "prompts": {},
+  "sessions": {
+    "s_aab0917834f4b0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f8fa4208-dd1f-4149-9787-8133b29075ec",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
