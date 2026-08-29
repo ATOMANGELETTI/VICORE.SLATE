@@ -1,0 +1,23 @@
+.cursor/commands/new-app.md
+  s_6bc42661d68e01::t_fe8182ea4ba913 1-9
+.cursor/commands/new-crate.md
+  s_6bc42661d68e01::t_f08af6852d35df 1-8
+.cursor/commands/new-package.md
+  s_6bc42661d68e01::t_e55f886388ca2b 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "276637648121bcc8d32b26ce60a52c18248a19da",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "unknown"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
