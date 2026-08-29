@@ -1,0 +1,19 @@
+.cursor/rules/011-release-packaging-layout.mdc
+  s_6bc42661d68e01::t_4b35cae51027fc 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "b93b329f20edcbb4fc30084fb7cf6762f84d75f1",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "unknown"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
