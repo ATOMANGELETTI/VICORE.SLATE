@@ -1,0 +1,14 @@
+.vscode/settings.json
+  h_90ad036e211778 2-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "8b4304d031d8f90fc66bdc328d249d25f5726e17",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
