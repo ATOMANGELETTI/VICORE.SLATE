@@ -1,0 +1,28 @@
+packages/ui-kit/src/styles/main.css
+  s_8b80a0239dc3c7::t_6318fd4aee55fe 1-29
+packages/ui-kit/tests/unit/styles/main-css.test.ts
+  s_8b80a0239dc3c7::t_fa5fa7786b488b 1-30
+biome.jsonc
+  s_8b80a0239dc3c7::t_e1e82449355658 23-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "ff23c4fa5e7aa96ba32aa0d1df93f4cdec11c8d5",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_8b80a0239dc3c7": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a67ac203-65ff-4d64-935c-520c9c1eefb1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
