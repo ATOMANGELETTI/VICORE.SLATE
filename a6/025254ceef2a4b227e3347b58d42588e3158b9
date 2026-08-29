@@ -1,0 +1,32 @@
+packages/ui-kit/src/composites/titlebar/window-controls.tsx
+  s_0ce40db76ff7ec::t_1e67e3e77e0aed 10-15,17
+  s_0ce40db76ff7ec::t_72cf0dd3324eb7 9,20-24,27-31,34
+  s_0ce40db76ff7ec::t_13f13e69f60eae 35-38
+.changeset/template-apps.md
+  s_0ce40db76ff7ec::t_780c3ccbfa60b2 1-13
+.superpowers/tasks/vicore-slate-scaffold.md
+  s_0ce40db76ff7ec::t_070d829dc14e6c 3-5
+.superpowers/plans/vicore-slate-scaffold/progress.md
+  s_0ce40db76ff7ec::t_645083d14c97f7 189-207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "a6025254ceef2a4b227e3347b58d42588e3158b9",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0ce40db76ff7ec": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "088049bc-696b-416d-b65a-fdcb44156295",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
