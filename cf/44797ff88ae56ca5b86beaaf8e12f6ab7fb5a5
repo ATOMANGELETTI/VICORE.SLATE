@@ -1,0 +1,30 @@
+tests/unit/package.test.ts
+  s_0acef02a8b7c96::t_ac1949723eefc1 1-118
+  s_0acef02a8b7c96::t_c8369c20f1f26f 119-125
+.gitignore
+  s_0acef02a8b7c96::t_eec7e7ce16f994 18
+  h_90ad036e211778 5-6
+scripts/package.ts
+  s_0acef02a8b7c96::t_a6ae86880ecc94 1-102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "cf44797ff88ae56ca5b86beaaf8e12f6ab7fb5a5",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0acef02a8b7c96": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "061733bc-8538-417a-be8d-c712aca70659",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
