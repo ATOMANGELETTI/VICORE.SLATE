@@ -1,5 +1,19 @@
 {
-    "workbench.editor.wrapTabs": true,
-    "workbench.editor.pinnedTabsOnSeparateRow": true,
-    "workbench.editor.pinnedTabSizing": "compact"
+  "editor.minimap.enabled": true,
+  "workbench.editor.enablePreview": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "breadcrumbs.enabled": true,
+
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.pinnedTabSizing": "compact",
+
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
   }
+}
