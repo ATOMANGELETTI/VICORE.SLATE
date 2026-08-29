@@ -1,0 +1,28 @@
+tests/unit/lib/generate-from-template.test.ts
+  s_0acef02a8b7c96::t_feb7c7631a3f7c 1-63
+scripts/lib/generate-from-template.ts
+  s_0acef02a8b7c96::t_7aee5101b26ff7 1-36
+scripts/new-app.ts
+  s_0acef02a8b7c96::t_ba2a8cba192b08 2,12-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "6d4c55f70ff3ed2d86fd3a72c955dfe728cabd29",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_0acef02a8b7c96": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "061733bc-8538-417a-be8d-c712aca70659",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
