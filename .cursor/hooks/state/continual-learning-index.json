@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "transcripts": {
+    "0f8dbc24-daf2-47c1-ab94-73dcaada5ead/0f8dbc24-daf2-47c1-ab94-73dcaada5ead.jsonl": {
+      "mtime": "2026-08-29T02:21:47.9016213Z"
+    },
+    "1fc4012e-91c4-42d0-9f68-2359141566fe/1fc4012e-91c4-42d0-9f68-2359141566fe.jsonl": {
+      "mtime": "2026-08-29T04:16:02.3735396Z"
+    },
+    "1fc4012e-91c4-42d0-9f68-2359141566fe/subagents/6cc7972f-7be1-4b34-ba1b-f4c513ab8e5f.jsonl": {
+      "mtime": "2026-08-29T04:17:55.1555558Z"
+    },
+    "a0642ac9-f5fd-4e20-9740-7549fa3c4919/a0642ac9-f5fd-4e20-9740-7549fa3c4919.jsonl": {
+      "mtime": "2026-08-29T02:42:37.7401189Z"
+    },
+    "a0642ac9-f5fd-4e20-9740-7549fa3c4919/subagents/1d6274f4-650f-4639-8934-391da7781d3b.jsonl": {
+      "mtime": "2026-08-29T02:36:45.3410888Z"
+    },
+    "defd51f9-2bba-4b9a-9f6b-1bfbebd8c732/defd51f9-2bba-4b9a-9f6b-1bfbebd8c732.jsonl": {
+      "mtime": "2026-08-29T02:36:24.4888977Z"
+    }
+  }
+}
