@@ -1,0 +1,31 @@
+.tool-versions
+  s_5c98829dca951e::t_22c4895850634b 2
+  s_6bc42661d68e01::t_c0d5e7ad778c1e 1,3
+rust-toolchain.toml
+  s_5c98829dca951e::t_0962e22d539f30 2
+  s_6bc42661d68e01::t_7974f0d93bdf16 1,3-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "af740718da1647e11ed16dd74c3c6d537118e9e8",
+  "prompts": {},
+  "sessions": {
+    "s_5c98829dca951e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5871035c-ba75-49ca-94fb-035b767bb018",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "grok-4.6"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
