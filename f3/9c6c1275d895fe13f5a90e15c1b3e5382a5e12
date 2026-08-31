@@ -1,0 +1,19 @@
+.cursor/rules/006-app-shell-window-chrome.mdc
+  s_61a85357c374a4::t_7eeb7ecd7c6fdc 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "f39c6c1275d895fe13f5a90e15c1b3e5382a5e12",
+  "prompts": {},
+  "sessions": {
+    "s_61a85357c374a4": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "66b3f40f-e9fa-4090-b37d-f22ed178dabc",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
