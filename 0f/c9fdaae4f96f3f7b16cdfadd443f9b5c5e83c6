@@ -1,0 +1,21 @@
+tests/unit/sync-crate-versions.test.ts
+  s_6bc42661d68e01::t_2d976748914098 1-41
+scripts/sync-crate-versions.ts
+  s_6bc42661d68e01::t_f6a658794936a8 1-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "0fc9fdaae4f96f3f7b16cdfadd443f9b5c5e83c6",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "default"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
