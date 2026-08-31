@@ -1,0 +1,19 @@
+.cursor/rules/002-monorepo-and-naming.mdc
+  s_9df43590c22759::t_85eb0f43911b43 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "ff3c0283f9e0cbfaa383e9e02ca3c89002a3dfbd",
+  "prompts": {},
+  "sessions": {
+    "s_9df43590c22759": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "c4129e82-59bb-47fa-b03d-00e4c3eb3812",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
