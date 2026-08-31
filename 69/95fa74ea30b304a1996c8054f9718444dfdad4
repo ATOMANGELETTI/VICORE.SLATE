@@ -1,0 +1,19 @@
+.cursor/rules/010-git-commit-workflow.mdc
+  s_a1e75ddec2d84e::t_65fff2ca14db23 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "6995fa74ea30b304a1996c8054f9718444dfdad4",
+  "prompts": {},
+  "sessions": {
+    "s_a1e75ddec2d84e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "22e9a0d7-7a0e-479e-acf3-ff574f5904af",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
