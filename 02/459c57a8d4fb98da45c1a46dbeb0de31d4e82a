@@ -1,0 +1,19 @@
+.cursor/rules/009-portability-and-deferred-scope.mdc
+  s_167e6d4bbdc851::t_06bc8c989dc0df 1-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "02459c57a8d4fb98da45c1a46dbeb0de31d4e82a",
+  "prompts": {},
+  "sessions": {
+    "s_167e6d4bbdc851": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4ac7bebf-24ee-42f2-9e5f-8ab4aa5900e9",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
