@@ -1,0 +1,47 @@
+.cursor/rules/012-agent-model-selection.mdc
+  h_90ad036e211778 21
+  s_51cac0660af8b2::t_912b5767611c48 2,8-10,12-16,20,22-24,26-27,31-45,49-55
+.superpowers/docs/specs/2026-08-29-agent-model-selection-design.md
+  s_51cac0660af8b2::t_08880220500d64 4,8-10,14-16,22-24,28,30-32,36-44,49-53,57,59-60,67
+  h_90ad036e211778 29,58
+AGENTS.md
+  s_51cac0660af8b2::t_be59efa3afd34f 9
+  s_6aef5ed1cbdadd::t_d1025f8a9da609 6,14,16,18-19,24
+.cursor/hooks/state/continual-learning.json
+  s_6aef5ed1cbdadd::t_86a98376414cb1 4,6
+  s_6aef5ed1cbdadd::t_4917dac230de6b 3
+  s_6aef5ed1cbdadd::t_b8d8bf1c5ffd70 5
+.cursor/hooks/state/continual-learning-index.json
+  s_6aef5ed1cbdadd::t_7580f35725b55e 4-6,10-15,17-41,44-77,85-96,99-110
+.superpowers/docs/plans/2026-08-29-vicore-slate-scaffold.phase.01.md
+  s_51cac0660af8b2::t_5ed4c499d1e859 745,751-753,755-756,769
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "5645f46b91fb2220a5a8a4f09d549a962e225176",
+  "prompts": {},
+  "humans": {
+    "h_90ad036e211778": {
+      "author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  },
+  "sessions": {
+    "s_51cac0660af8b2": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8b3d63d7-508d-47b1-8e7e-3d5d9e18884c",
+        "model": "default"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_6aef5ed1cbdadd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "b2198762-f5ed-45e1-8c46-5557597a99c1",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
