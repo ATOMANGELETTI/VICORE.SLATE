@@ -1,0 +1,27 @@
+.github/workflows/ci.yml
+  s_5f37c8c9e79c5f::t_b693cbbed264af 1-24
+tests/unit/check-toolchain-versions.test.ts
+  s_5f37c8c9e79c5f::t_deebb3474ec432 1-21
+scripts/check-toolchain-versions.ts
+  s_5f37c8c9e79c5f::t_8f41f70ff2f459 4-27
+  s_5f37c8c9e79c5f::t_0f8f4a8590c9de 28-55
+  s_5f37c8c9e79c5f::t_68f170b83a4ee9 1-3
+package.json
+  s_5f37c8c9e79c5f::t_b4db5dfe665715 33-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "2303fcd0644efa7e19d3819c675c483db9a9d017",
+  "prompts": {},
+  "sessions": {
+    "s_5f37c8c9e79c5f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "b9abdb76-ef3c-4e55-af67-5757c46ea549",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
