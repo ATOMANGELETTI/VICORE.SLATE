@@ -1,0 +1,32 @@
+deny.toml
+  s_6bc42661d68e01::t_f757c9fd610d21 1-18
+rustfmt.toml
+  s_6bc42661d68e01::t_f5dab061889096 1-4
+clippy.toml
+  s_40d8da477914a2::t_0e62c5596ff82f 1
+  s_6bc42661d68e01::t_6483299b1429d0 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "c50e8b42e0c7b0459caa8446141d8b4411ae2873",
+  "prompts": {},
+  "sessions": {
+    "s_40d8da477914a2": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "13265c4e-fc5c-466d-a898-d06c4caad1cd",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "grok-4.6"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
