@@ -1,0 +1,22 @@
+vitest.workspace.ts
+  s_6bc42661d68e01::t_da652344ad06d8 1-4
+tsconfig.json
+  s_6bc42661d68e01::t_2dcc934817042b 2-6
+  s_6bc42661d68e01::t_4312bbbdc3dbbf 1,7-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "304907bcf1c29e6971c4e486722b073a4a7306dd",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "grok-4.6"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
