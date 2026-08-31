@@ -1,0 +1,30 @@
+Cargo.toml
+  s_11960dfbb0deec::t_270c1c5133d26a 7
+  s_6bc42661d68e01::t_0f7aa2423f1d2f 1-6,8-14
+apps/slate-launcher/src-tauri/Cargo.toml
+  s_6bc42661d68e01::t_5d0ed49295756f 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "e0b548c39cbfb701a4ca5fb4bd4c9b77e5c659a3",
+  "prompts": {},
+  "sessions": {
+    "s_11960dfbb0deec": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "dd1f6e87-a5fa-4b52-b27a-83c1c6452bbd",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "grok-4.6"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
