@@ -1,0 +1,19 @@
+.cursor/rules/008-testing-strategy.mdc
+  s_6ec04c18bd2bcd::t_b5977dfbb2b6ed 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "93c45f2cbba29475a1434aad5358ffbc95b3dad8",
+  "prompts": {},
+  "sessions": {
+    "s_6ec04c18bd2bcd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "d88d4a25-4e45-4ba1-b64c-9b2decf5796f",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
