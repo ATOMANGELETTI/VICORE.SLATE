@@ -1,0 +1,19 @@
+.cursor/rules/005-ui-kit-boundaries.mdc
+  s_7c2e83d7097f19::t_06e8508353b37e 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "c41e16f0053c0077499ccca14fe1e614c8d48883",
+  "prompts": {},
+  "sessions": {
+    "s_7c2e83d7097f19": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1b2ad2b7-f9a8-43a0-9fde-bd401bebf32d",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
