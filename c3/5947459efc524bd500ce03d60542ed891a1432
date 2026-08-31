@@ -1,0 +1,19 @@
+.cursor/rules/004-typescript-react-guidelines.mdc
+  s_0ae16aec56afe3::t_d01124d639c574 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "c35947459efc524bd500ce03d60542ed891a1432",
+  "prompts": {},
+  "sessions": {
+    "s_0ae16aec56afe3": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "42047ef3-ff11-478c-bed1-5dad5d30c88e",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
