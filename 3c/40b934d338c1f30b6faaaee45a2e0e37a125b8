@@ -1,0 +1,21 @@
+.changeset/config.json
+  s_6bc42661d68e01::t_34d0eff92fc5e5 1-9
+.changeset/README.md
+  s_6bc42661d68e01::t_8adf51ca706af2 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "3c40b934d338c1f30b6faaaee45a2e0e37a125b8",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "grok-4.6"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
