@@ -1,0 +1,23 @@
+.superpowers/docs/tasks/vicore-slate-scaffold.md
+  s_6bc42661d68e01::t_f999034c55a469 14
+  s_6bc42661d68e01::t_f56de67ad28bc0 4,6
+  s_6bc42661d68e01::t_46e8c38e1602ef 3,5,7
+  s_6bc42661d68e01::t_de40b70729345d 15-22
+  s_6bc42661d68e01::t_73dcb7bc724a72 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "185fb88ecf135a26adaf6165252e1d2a46a5ce3d",
+  "prompts": {},
+  "sessions": {
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "default"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
