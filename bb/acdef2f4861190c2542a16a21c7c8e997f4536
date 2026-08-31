@@ -1,0 +1,38 @@
+package.json
+  s_6bc42661d68e01::t_07c0f96c3d02ce 1-4,6-25,27-28
+  s_135321544944ee::t_0407c6274e7314 5,26
+.gitignore
+  s_135321544944ee::t_11102b2f573e35 12-15
+bunfig.toml
+  s_6bc42661d68e01::t_04dbfb2221d3f7 1-7
+packages/ui-kit/package.json
+  s_6bc42661d68e01::t_2e97166a7aba0b 1-5
+packages/config-typescript/package.json
+  s_6bc42661d68e01::t_e9806d646fb223 1-5
+apps/slate-launcher/package.json
+  s_6bc42661d68e01::t_33acaa4af442d1 1-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "bbacdef2f4861190c2542a16a21c7c8e997f4536",
+  "prompts": {},
+  "sessions": {
+    "s_135321544944ee": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "13620d44-7ee7-4907-bbb6-7255cb8279b3",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    },
+    "s_6bc42661d68e01": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "1fc4012e-91c4-42d0-9f68-2359141566fe",
+        "model": "grok-4.6"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
