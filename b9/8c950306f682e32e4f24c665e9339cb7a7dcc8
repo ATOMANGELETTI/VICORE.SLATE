@@ -1,0 +1,19 @@
+.cursor/rules/007-nord-theming.mdc
+  s_5da12809486c31::t_723e70f912dc0f 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "b98c950306f682e32e4f24c665e9339cb7a7dcc8",
+  "prompts": {},
+  "sessions": {
+    "s_5da12809486c31": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5e6c3f7b-cfb2-4d0a-a716-247c9f02a5bf",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
