@@ -1,0 +1,19 @@
+.cursor/rules/001-project-overview.mdc
+  s_8b56a7e4647c95::t_01383b4cbda702 1-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "f295e30550e299e6e5aeb8898c9118541c5ca1a9",
+  "prompts": {},
+  "sessions": {
+    "s_8b56a7e4647c95": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f153fa12-a0d8-485b-b9fe-ee05766d7204",
+        "model": "cursor-grok-4.6-xhigh-fast"
+      },
+      "human_author": "ATOMANGELETTI <DUSTIN@ANGELETTI.SPACE>"
+    }
+  }
+}
