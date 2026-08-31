@@ -742,33 +742,18 @@ git commit -m "docs: add release packaging layout rule"
 
 ```markdown
 ---
-description: Choose the best enabled model per task; default Grok 4.6; escalate when needed
+description: Grok 4.6 default; Sonnet/Opus 5 only when planning or execution needs it
 alwaysApply: true
 ---
 
 # Agent Model Selection
 
-Before Superpowers workflows, Task/subagent launches, or other multi-agent work,
-decide which enabled model fits that unit of work.
+Default to Grok 4.6 (`cursor-grok-4.6-xhigh-fast`). Use Grok as much as possible.
+Escalate to Sonnet 5 or Opus 5 only when planning or the agent determines a stronger
+model is needed, or when Grok gets stuck. Never use Composer 2.5.
 
-## Default
-
-Prefer Grok 4.6 (Task slug `cursor-grok-4.6-xhigh-fast` when a model must be set).
-It is capable enough for most implementation, exploration, shell, and scaffolding.
-
-## Escalate when the task needs it
-
-Use a stronger enabled model (examples: Kimi K3 / `kimi-k3-max`, Claude Opus)
-when the work is high-stakes or capability-bound — e.g. deep architecture /
-brainstorming, writing complex plans, security review, or hard debugging after
-a weaker pass. Prefer Grok when capability is close enough; escalate on genuine
-need, not habit.
-
-## Constraints
-
-- Only models enabled in the current session / Task allowlist — never invent slugs.
-- Explicit user model requests always win.
-- Do not announce the model every turn; optional brief note when escalating.
+See the committed `.cursor/rules/012-agent-model-selection.mdc` for full tier table
+and decision rules.
 ```
 
 - [ ] **Step 2: Verify frontmatter**
@@ -781,7 +766,7 @@ Expected: frontmatter with `alwaysApply: true`.
 Under `## Learned User Preferences`, ensure this bullet exists (add if missing):
 
 ```markdown
-- Prefer Grok 4.6 as the default agent/subagent model; before Superpowers or multi-agent work, choose the best enabled model for the task and escalate (e.g. Kimi K3) when higher capability is needed.
+- Prefer Grok 4.6 (`cursor-grok-4.6-xhigh-fast`) as the default agent/subagent model — use Grok as much as possible. Never use Composer 2.5. Escalate to Sonnet 5 or Opus 5 only when planning or the agent determines a stronger model is needed, or when Grok gets stuck.
 ```
 
 Under `## Learned Workspace Facts`, ensure the `.cursor/rules/` bullet mentions `000`–`012` and `012-agent-model-selection.mdc`.
